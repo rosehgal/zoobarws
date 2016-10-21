@@ -1,0 +1,1911 @@
+Script started on Fri 04 Mar 2016 02:23:18 PM UTC
+Trying concrete values: {}
+startresp 404 NOT FOUND [('Content-Type', 'text/html'), ('Content-Length', '233'), ('X-XSS-Protection', '0')]
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>404 Not Found</title>
+<h1>Not Found</h1>
+<p>The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.</p>
+
+Trying concrete values: {'_t_xor_2': 1L, '_t_xor_3': 2L, '_t_xor_0': 2L, '_t_xor_1': 1L, '_t_str0': 'tr', '_t_str1': 'ansfer', '_t_str2': 't', '_t_str3': 'ransfer', 'path': 'fer'}
+/home/httpd/lab3/zoobar/debug.py:23 :: __try : caught exception in function transfer:
+ Traceback (most recent call last):
+  File "/home/httpd/lab3/zoobar/debug.py", line 20, in __try
+    return f(*args, **kwargs)
+  File "/home/httpd/lab3/zoobar/login.py", line 59, in loginhelper
+    if not logged_in():
+  File "/home/httpd/lab3/zoobar/login.py", line 50, in logged_in
+    g.user.checkCookie(request.cookies.get("PyZoobarLogin"))
+  File "/usr/lib/python2.7/dist-packages/werkzeug/local.py", line 338, in __getattr__
+    return getattr(self._get_current_object(), name)
+  File "/usr/lib/python2.7/dist-packages/werkzeug/utils.py", line 71, in __get__
+    value = self.func(obj)
+  File "/home/httpd/lab3/symex/symflask.py", line 44, in cookies
+    fuzzy.require(hdr == name + '=' + val)
+  File "/home/httpd/lab3/symex/fuzzy.py", line 365, in require
+    raise RequireMismatch()
+RequireMismatch
+
+startresp 500 INTERNAL SERVER ERROR [('Content-Type', 'text/html'), ('Content-Length', '291')]
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.</p>
+
+Trying concrete values: {'_t_xor_2': 1L, '_t_xor_3': 2L, '_t_xor_0': 2L, '_t_xor_1': 1L, '_t_len_cookie_val_1': '2', '_t_len_cookie_name_1': '1', 'cookie_name': 'v', '_t_str0': 'tr', '_t_str1': 'ansfer', '_t_str2': 't', '_t_str3': 'ransfer', '_t_val_cookie_val_2_0': '28', 'cookie': 'v=aC', 'path': 'fer', 'cookie_val': 'aC', '_t_val_cookie_name_1_0': '21'}
+startresp 302 FOUND [('Content-Type', 'text/html; charset=utf-8'), ('Content-Length', '317'), ('Location', 'http://zoobarscript/script/login?nexturl=http://zoobarscript/transfer?query'), ('X-XSS-Protection', '0')]
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>Redirecting...</title>
+<h1>Redirecting...</h1>
+<p>You should be redirected automatically to target URL: <a href="script/login?nexturl=http://zoobarscript/transfer?query">script/login?nexturl=http://zoobarscript/transfer?query</a>.  If not click the link.
+Trying concrete values: {'_t_xor_2': 1L, '_t_xor_3': 2L, '_t_xor_0': 2L, '_t_xor_1': 1L, 'cookie': 'PyZoobarLogin=aaaaa\x1a', 'cookie_name': 'PyZoobarLogin', '_t_str0': 'tr', '_t_str1': 'ansfer', '_t_str2': 't', '_t_str3': 'ransfer', '_t_len_cookie_val_1': 'more', '_t_len_cookie_val_2': 'more', '_t_len_cookie_val_3': '6', 'cookie_val': 'aaaaa\x1a', '_t_val_cookie_val_6_0': '122', 'path': 'fer'}
+/home/httpd/lab3/zoobar/debug.py:23 :: __try : caught exception in function transfer:
+ Traceback (most recent call last):
+  File "/home/httpd/lab3/zoobar/debug.py", line 20, in __try
+    return f(*args, **kwargs)
+  File "/home/httpd/lab3/zoobar/login.py", line 59, in loginhelper
+    if not logged_in():
+  File "/home/httpd/lab3/zoobar/login.py", line 50, in logged_in
+    g.user.checkCookie(request.cookies.get("PyZoobarLogin"))
+  File "/home/httpd/lab3/zoobar/login.py", line 38, in checkCookie
+    (username, token) = cookie.rsplit("#", 1)
+ValueError: too many values to unpack
+
+startresp 500 INTERNAL SERVER ERROR [('Content-Type', 'text/html'), ('Content-Length', '291')]
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.</p>
+
+Trying concrete values: {'_t_xor_2': 1L, '_t_xor_3': 2L, '_t_len_rsplit_cookie_val_#_l_1': '1', '_t_xor_1': 1L, 'rsplit_cookie_val_#_l': ',', 'cookie_val': ',#aaaaaaaa\x06', 'cookie_name': 'PyZoobarLogin', '_t_str0': 'tr', '_t_str1': 'ansfer', '_t_str2': 't', '_t_str3': 'ransfer', '_t_len_rsplit_cookie_val_#_r_1': 'more', '_t_val_rsplit_cookie_val_#_l_1_0': '74', '_t_xor_0': 2L, '_t_len_rsplit_cookie_val_#_r_2': 'more', 'cookie': 'PyZoobarLogin=,#aaaaaaaa\x06', '_t_len_rsplit_cookie_val_#_r_4': '9', '_t_val_rsplit_cookie_val_#_r_9_0': '102', 'rsplit_cookie_val_#_r': 'aaaaaaaa\x06', 'path': 'fer', '_t_len_rsplit_cookie_val_#_r_3': 'more'}
+startresp 302 FOUND [('Content-Type', 'text/html; charset=utf-8'), ('Content-Length', '317'), ('Location', 'http://zoobarscript/script/login?nexturl=http://zoobarscript/transfer?query'), ('X-XSS-Protection', '0')]
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>Redirecting...</title>
+<h1>Redirecting...</h1>
+<p>You should be redirected automatically to target URL: <a href="script/login?nexturl=http://zoobarscript/transfer?query">script/login?nexturl=http://zoobarscript/transfer?query</a>.  If not click the link.
+Trying concrete values: {'_t_xor_2': 1L, '_t_xor_3': 2L, '_t_xor_0': 2L, '_t_xor_1': 1L, 'rsplit_cookie_val_#_l': 'alice', 'cookie_name': 'PyZoobarLogin', '_t_str0': 'tr', '_t_str1': 'ansfer', '_t_str2': 't', '_t_val_rsplit_cookie_val_#_r_1_0': '75', '_t_len_rsplit_cookie_val_#_r_1': '1', 'cookie': 'PyZoobarLogin=alice#-', 'rsplit_cookie_val_#_r': '-', 'cookie_val': 'alice#-', 'path': 'fer', '_t_str3': 'ransfer'}
+startresp 302 FOUND [('Content-Type', 'text/html; charset=utf-8'), ('Content-Length', '317'), ('Location', 'http://zoobarscript/script/login?nexturl=http://zoobarscript/transfer?query'), ('X-XSS-Protection', '0')]
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>Redirecting...</title>
+<h1>Redirecting...</h1>
+<p>You should be redirected automatically to target URL: <a href="script/login?nexturl=http://zoobarscript/transfer?query">script/login?nexturl=http://zoobarscript/transfer?query</a>.  If not click the link.
+Trying concrete values: {'_t_xor_2': 1L, '_t_xor_3': 2L, '_t_xor_0': 2L, '_t_xor_1': 1L, 'cookie': 'PyZoobarLogin=alice#atok', 'rsplit_cookie_val_#_l': 'alice', 'cookie_name': 'PyZoobarLogin', '_t_str0': 'tr', '_t_str1': 'ansfer', '_t_str2': 't', '_t_str3': 'ransfer', 'cookie_val': 'alice#atok', 'rsplit_cookie_val_#_r': 'atok', 'path': 'fer'}
+startresp 200 OK [('Content-Type', 'text/html; charset=utf-8'), ('Content-Length', '1633'), ('X-XSS-Protection', '0')]
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="/zoobar/media/zoobar.css">
+        <title>
+          Transfer - Zoobar Foundation
+        </title>
+    </head>
+    <body>
+        
+        
+        
+        <div id="header">
+          <div><a href="script/logout">Log out alice</a></div>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+      <h1><a href="script/">Zoobar Foundation for Sustainable
+                      Dialogue</a></h1>
+      <h2>Supporting the leading
+          advocates of the new world order</h2>
+      
+      <div id="main" class="centerpiece">
+        <table>
+          <tr><td>
+             <p>
+               
+                 
+                   <a href="script/">Home</a>
+                 
+                  | 
+               
+                 
+                   <a href="script/users">Users</a>
+                 
+                  | 
+               
+                 
+                   <b>Transfer</b>
+                 
+                 
+               
+             </p>
+          </td></tr>
+          <tr><td class="main">
+            
+<b>Balance: </b><span id="myZoobars"></span> zoobars<br />
+<form method="POST" name="transferform" action="script/transfer">
+<p>Send <input name="zoobars" type="text" value="" size=5> zoobars</p>
+<p>to <input name=recipient type=text value="" size=10></p>
+<input type="submit" name="submission" value="Send">
+</form>
+
+<script type="text/javascript" src="script/zoobarjs"></script>
+
+          </td></tr>
+        </table>
+      </div>
+      
+      
+    </body>
+</html>
+Trying concrete values: {'_t_xor_2': 1L, '_t_xor_3': 2L, '_t_xor_0': 2L, '_t_xor_1': 1L, 'cookie': 'PyZoobarLogin=alice#atok', 'form_recipient_present': 25L, 'rsplit_cookie_val_#_l': 'alice', 'cookie_name': 'PyZoobarLogin', '_t_str0': 'tr', '_t_str1': 'ansfer', '_t_str2': 't', '_t_str3': 'ransfer', 'cookie_val': 'alice#atok', 'rsplit_cookie_val_#_r': 'atok', 'path': 'fer'}
+Traceback (most recent call last):
+  File "/home/httpd/lab3/zoobar/transfer.py", line 15, in transfer
+    zoobars = eval(request.form['zoobars'])
+KeyError: 'zoobars'
+startresp 200 OK [('Content-Type', 'text/html; charset=utf-8'), ('Content-Length', '1686'), ('X-XSS-Protection', '0')]
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="/zoobar/media/zoobar.css">
+        <title>
+          Transfer - Zoobar Foundation
+        </title>
+    </head>
+    <body>
+        
+        
+        
+        <div id="header">
+          <div><a href="script/logout">Log out alice</a></div>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+      <h1><a href="script/">Zoobar Foundation for Objective
+                      Research</a></h1>
+      <h2>Supporting the foremost
+          researchers of the counterinsurgency</h2>
+      
+      <div id="main" class="centerpiece">
+        <table>
+          <tr><td>
+             <p>
+               
+                 
+                   <a href="script/">Home</a>
+                 
+                  | 
+               
+                 
+                   <a href="script/users">Users</a>
+                 
+                  | 
+               
+                 
+                   <b>Transfer</b>
+                 
+                 
+               
+             </p>
+          </td></tr>
+          <tr><td class="main">
+            
+<b>Balance: </b><span id="myZoobars"></span> zoobars<br />
+<form method="POST" name="transferform" action="script/transfer">
+<p>Send <input name="zoobars" type="text" value="" size=5> zoobars</p>
+<p>to <input name=recipient type=text value="" size=10></p>
+<input type="submit" name="submission" value="Send">
+</form>
+
+<span class="warning">Transfer to  failed</span>
+
+<script type="text/javascript" src="script/zoobarjs"></script>
+
+          </td></tr>
+        </table>
+      </div>
+      
+      
+    </body>
+</html>
+Trying concrete values: {'_t_xor_0': 2L, '_t_xor_1': 1L, '_t_str0': 'tr', '_t_str1': 'ansj', '_t_str2': 't', '_t_str3': 'ransj', '_t_len_path_1': '1', 'path': 'j', '_t_val_path_1_0': '9'}
+startresp 404 NOT FOUND [('Content-Type', 'text/html'), ('Content-Length', '233'), ('X-XSS-Protection', '0')]
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>404 Not Found</title>
+<h1>Not Found</h1>
+<p>The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.</p>
+
+Trying concrete values: {'_t_xor_2': 1L, '_t_xor_3': 2L, '_t_xor_0': 2L, '_t_xor_1': 1L, 'rsplit_cookie_val_#_l': 'bob', 'cookie_name': 'PyZoobarLogin', '_t_str0': 'tr', '_t_str1': 'ansfer', '_t_str2': 't', '_t_val_rsplit_cookie_val_#_r_1_0': '75', '_t_len_rsplit_cookie_val_#_r_1': '1', 'cookie': 'PyZoobarLogin=bob#-', 'rsplit_cookie_val_#_r': '-', 'cookie_val': 'bob#-', 'path': 'fer', '_t_str3': 'ransfer'}
+startresp 302 FOUND [('Content-Type', 'text/html; charset=utf-8'), ('Content-Length', '317'), ('Location', 'http://zoobarscript/script/login?nexturl=http://zoobarscript/transfer?query'), ('X-XSS-Protection', '0')]
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>Redirecting...</title>
+<h1>Redirecting...</h1>
+<p>You should be redirected automatically to target URL: <a href="script/login?nexturl=http://zoobarscript/transfer?query">script/login?nexturl=http://zoobarscript/transfer?query</a>.  If not click the link.
+Trying concrete values: {'_t_xor_2': 1L, '_t_xor_3': 2L, '_t_xor_0': 2L, '_t_xor_1': 1L, 'form_recipient_present': 0L, 'rsplit_cookie_val_#_l': 'alice', 'cookie_name': 'PyZoobarLogin', '_t_str0': 'tr', '_t_str1': 'ansfer', '_t_str2': 't', '_t_str3': 'ransfer', 'cookie_val': 'alice#atok', 'form_zoobars_present': 25L, 'rsplit_cookie_val_#_r': 'atok', 'cookie': 'PyZoobarLogin=alice#atok', 'path': 'fer'}
+startresp 200 OK [('Content-Type', 'text/html; charset=utf-8'), ('Content-Length', '1627'), ('X-XSS-Protection', '0')]
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="/zoobar/media/zoobar.css">
+        <title>
+          Transfer - Zoobar Foundation
+        </title>
+    </head>
+    <body>
+        
+        
+        
+        <div id="header">
+          <div><a href="script/logout">Log out alice</a></div>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+      <h1><a href="script/">Zoobar Foundation for Sensible
+                      Policy</a></h1>
+      <h2>Supporting the best
+          researchers of the new world order</h2>
+      
+      <div id="main" class="centerpiece">
+        <table>
+          <tr><td>
+             <p>
+               
+                 
+                   <a href="script/">Home</a>
+                 
+                  | 
+               
+                 
+                   <a href="script/users">Users</a>
+                 
+                  | 
+               
+                 
+                   <b>Transfer</b>
+                 
+                 
+               
+             </p>
+          </td></tr>
+          <tr><td class="main">
+            
+<b>Balance: </b><span id="myZoobars"></span> zoobars<br />
+<form method="POST" name="transferform" action="script/transfer">
+<p>Send <input name="zoobars" type="text" value="" size=5> zoobars</p>
+<p>to <input name=recipient type=text value="" size=10></p>
+<input type="submit" name="submission" value="Send">
+</form>
+
+<script type="text/javascript" src="script/zoobarjs"></script>
+
+          </td></tr>
+        </table>
+      </div>
+      
+      
+    </body>
+</html>
+Trying concrete values: {'_t_xor_2': 1L, '_t_val_rsplit_cookie_val_#_r_3_0': '118', '_t_xor_0': 2L, '_t_xor_1': 1L, '_t_xor_3': 2L, 'rsplit_cookie_val_#_l': 'alice', 'cookie_name': 'PyZoobarLogin', '_t_str0': 'tr', '_t_str1': 'ansfer', '_t_str2': 't', '_t_str3': 'ransfer', '_t_len_rsplit_cookie_val_#_r_1': 'more', '_t_len_rsplit_cookie_val_#_r_2': '3', 'cookie_val': 'alice#aa\x16', 'rsplit_cookie_val_#_r': 'aa\x16', 'cookie': 'PyZoobarLogin=alice#aa\x16', 'path': 'fer'}
+startresp 302 FOUND [('Content-Type', 'text/html; charset=utf-8'), ('Content-Length', '317'), ('Location', 'http://zoobarscript/script/login?nexturl=http://zoobarscript/transfer?query'), ('X-XSS-Protection', '0')]
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>Redirecting...</title>
+<h1>Redirecting...</h1>
+<p>You should be redirected automatically to target URL: <a href="script/login?nexturl=http://zoobarscript/transfer?query">script/login?nexturl=http://zoobarscript/transfer?query</a>.  If not click the link.
+Trying concrete values: {'_t_xor_2': 1L, '_t_xor_3': 2L, '_t_xor_0': 2L, '_t_xor_1': 1L, '_t_val_cookie_name_2_0': '55', '_t_len_cookie_name_1': '2', 'cookie_name': 'a3', '_t_str0': 'tr', '_t_str1': 'ansfer', '_t_str2': 't', '_t_str3': 'ransfer', '_t_len_cookie_val_1': 'more', '_t_len_cookie_val_2': 'more', '_t_len_cookie_val_3': '8', 'cookie': 'a3=aaaaaaam', 'path': 'fer', 'cookie_val': 'aaaaaaam', '_t_val_cookie_val_8_0': '12'}
+startresp 302 FOUND [('Content-Type', 'text/html; charset=utf-8'), ('Content-Length', '317'), ('Location', 'http://zoobarscript/script/login?nexturl=http://zoobarscript/transfer?query'), ('X-XSS-Protection', '0')]
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>Redirecting...</title>
+<h1>Redirecting...</h1>
+<p>You should be redirected automatically to target URL: <a href="script/login?nexturl=http://zoobarscript/transfer?query">script/login?nexturl=http://zoobarscript/transfer?query</a>.  If not click the link.
+Trying concrete values: {'_t_xor_2': 1L, '_t_xor_3': 2L, '_t_xor_0': 2L, '_t_xor_1': 1L, '_t_val_cookie_val_6_0': '41', '_t_str0': 'tr', '_t_str1': 'ansfer', '_t_str2': 't', '_t_str3': 'ransfer', '_t_len_cookie_val_1': 'more', '_t_len_cookie_val_2': 'more', '_t_len_cookie_val_3': '6', 'cookie_val': 'aaaaaP', '_t_len_cookie_1': '1', 'cookie_name': 'aaaaaaaab\x7f', '_t_len_cookie_name_4': '10', '_t_len_cookie_name_1': 'more', '_t_len_cookie_name_3': 'more', '_t_len_cookie_name_2': 'more', 'path': 'fer', '_t_val_cookie_name_10_0': 'more', '_t_val_cookie_name_10_1': '223', '_t_val_cookie_1_0': '51', 'cookie': 'Z'}
+/home/httpd/lab3/zoobar/debug.py:23 :: __try : caught exception in function transfer:
+ Traceback (most recent call last):
+  File "/home/httpd/lab3/zoobar/debug.py", line 20, in __try
+    return f(*args, **kwargs)
+  File "/home/httpd/lab3/zoobar/login.py", line 59, in loginhelper
+    if not logged_in():
+  File "/home/httpd/lab3/zoobar/login.py", line 50, in logged_in
+    g.user.checkCookie(request.cookies.get("PyZoobarLogin"))
+  File "/usr/lib/python2.7/dist-packages/werkzeug/local.py", line 338, in __getattr__
+    return getattr(self._get_current_object(), name)
+  File "/usr/lib/python2.7/dist-packages/werkzeug/utils.py", line 71, in __get__
+    value = self.func(obj)
+  File "/home/httpd/lab3/symex/symflask.py", line 44, in cookies
+    fuzzy.require(hdr == name + '=' + val)
+  File "/home/httpd/lab3/symex/fuzzy.py", line 365, in require
+    raise RequireMismatch()
+RequireMismatch
+
+startresp 500 INTERNAL SERVER ERROR [('Content-Type', 'text/html'), ('Content-Length', '291')]
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.</p>
+
+Trying concrete values: {'_t_xor_2': 1L, '_t_xor_3': 2L, '_t_xor_0': 2L, '_t_xor_1': 1L, '_t_str4': 't', 'rsplit_cookie_val_#_l': '\\', '_t_str0': 'au', '_t_str1': 'aaaaT', '_t_str2': 'tr', '_t_str3': 'ansfer', 'cookie_val': 'au#aaaaT', 'rsplit_cookie_val_#_r': 'b_', '_t_val_rsplit_cookie_val_#_r_2_0': 'more', '_t_val_rsplit_cookie_val_#_r_2_1': '217', '_t_len__t_str1_2': '5', '_t_len__t_str1_1': 'more', 'cookie_name': 'PyZoobarLogin', 'cookie': 'PyZoobarLogin=au#aaaaT', 'path': 'fer', '_t_val__t_str0_2_0': '20', '_t_val__t_str1_5_0': '45', '_t_len_rsplit_cookie_val_#_l_1': '1', '_t_len__t_str0_1': '2', '_t_len_rsplit_cookie_val_#_r_1': '2', '_t_val_rsplit_cookie_val_#_l_1_0': '86', '_t_str5': 'ransfer'}
+/home/httpd/lab3/zoobar/debug.py:23 :: __try : caught exception in function transfer:
+ Traceback (most recent call last):
+  File "/home/httpd/lab3/zoobar/debug.py", line 20, in __try
+    return f(*args, **kwargs)
+  File "/home/httpd/lab3/zoobar/login.py", line 59, in loginhelper
+    if not logged_in():
+  File "/home/httpd/lab3/zoobar/login.py", line 50, in logged_in
+    g.user.checkCookie(request.cookies.get("PyZoobarLogin"))
+  File "/home/httpd/lab3/zoobar/login.py", line 38, in checkCookie
+    (username, token) = cookie.rsplit("#", 1)
+ValueError: too many values to unpack
+
+startresp 500 INTERNAL SERVER ERROR [('Content-Type', 'text/html'), ('Content-Length', '291')]
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.</p>
+
+Trying concrete values: {'_t_xor_2': 1L, '_t_xor_3': 2L, '_t_xor_0': 2L, '_t_xor_1': 1L, 'cookie': 'PyZoobarLogin=bob#btok', 'rsplit_cookie_val_#_l': 'bob', 'cookie_name': 'PyZoobarLogin', '_t_str0': 'tr', '_t_str1': 'ansfer', '_t_str2': 't', '_t_str3': 'ransfer', 'cookie_val': 'bob#btok', 'rsplit_cookie_val_#_r': 'btok', 'path': 'fer'}
+startresp 200 OK [('Content-Type', 'text/html; charset=utf-8'), ('Content-Length', '1624'), ('X-XSS-Protection', '0')]
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="/zoobar/media/zoobar.css">
+        <title>
+          Transfer - Zoobar Foundation
+        </title>
+    </head>
+    <body>
+        
+        
+        
+        <div id="header">
+          <div><a href="script/logout">Log out bob</a></div>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+      <h1><a href="script/">Zoobar Foundation for Awesome
+                      Dialogue</a></h1>
+      <h2>Supporting the foremost
+          minds of the new world order</h2>
+      
+      <div id="main" class="centerpiece">
+        <table>
+          <tr><td>
+             <p>
+               
+                 
+                   <a href="script/">Home</a>
+                 
+                  | 
+               
+                 
+                   <a href="script/users">Users</a>
+                 
+                  | 
+               
+                 
+                   <b>Transfer</b>
+                 
+                 
+               
+             </p>
+          </td></tr>
+          <tr><td class="main">
+            
+<b>Balance: </b><span id="myZoobars"></span> zoobars<br />
+<form method="POST" name="transferform" action="script/transfer">
+<p>Send <input name="zoobars" type="text" value="" size=5> zoobars</p>
+<p>to <input name=recipient type=text value="" size=10></p>
+<input type="submit" name="submission" value="Send">
+</form>
+
+<script type="text/javascript" src="script/zoobarjs"></script>
+
+          </td></tr>
+        </table>
+      </div>
+      
+      
+    </body>
+</html>
+Trying concrete values: {'_t_xor_2': 1L, '_t_xor_3': 2L, '_t_xor_0': 2L, '_t_xor_1': 1L, 'cookie': 'PyZoobarLogin=alice#atok', 'form_recipient_present': 0L, 'rsplit_cookie_val_#_l': 'alice', 'cookie_name': 'PyZoobarLogin', '_t_str0': 'tr', '_t_str1': 'ansfer', '_t_str2': 't', '_t_str3': 'ransfer', 'cookie_val': 'alice#atok', 'rsplit_cookie_val_#_r': 'atok', 'path': 'fer'}
+startresp 200 OK [('Content-Type', 'text/html; charset=utf-8'), ('Content-Length', '1628'), ('X-XSS-Protection', '0')]
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="/zoobar/media/zoobar.css">
+        <title>
+          Transfer - Zoobar Foundation
+        </title>
+    </head>
+    <body>
+        
+        
+        
+        <div id="header">
+          <div><a href="script/logout">Log out alice</a></div>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+      <h1><a href="script/">Zoobar Foundation for Objective
+                      Research</a></h1>
+      <h2>Supporting the loyal
+          students of the next generation</h2>
+      
+      <div id="main" class="centerpiece">
+        <table>
+          <tr><td>
+             <p>
+               
+                 
+                   <a href="script/">Home</a>
+                 
+                  | 
+               
+                 
+                   <a href="script/users">Users</a>
+                 
+                  | 
+               
+                 
+                   <b>Transfer</b>
+                 
+                 
+               
+             </p>
+          </td></tr>
+          <tr><td class="main">
+            
+<b>Balance: </b><span id="myZoobars"></span> zoobars<br />
+<form method="POST" name="transferform" action="script/transfer">
+<p>Send <input name="zoobars" type="text" value="" size=5> zoobars</p>
+<p>to <input name=recipient type=text value="" size=10></p>
+<input type="submit" name="submission" value="Send">
+</form>
+
+<script type="text/javascript" src="script/zoobarjs"></script>
+
+          </td></tr>
+        </table>
+      </div>
+      
+      
+    </body>
+</html>
+Trying concrete values: {'_t_xor_2': 1L, '_t_xor_3': 2L, '_t_len_rsplit_cookie_val_#_l_1': '2', '_t_xor_1': 1L, 'cookie': 'PyZoobarLogin=a\x03#aaaa\x1b', '_t_len_rsplit_cookie_val_#_r_2': '5', 'rsplit_cookie_val_#_l': 'a\x03', 'cookie_name': 'PyZoobarLogin', '_t_str0': 'tr', '_t_str1': 'ansfer', '_t_str2': 't', '_t_str3': 'ransfer', '_t_len_rsplit_cookie_val_#_r_1': 'more', '_t_xor_0': 2L, '_t_val_rsplit_cookie_val_#_r_5_0': '123', 'cookie_val': 'a\x03#aaaa\x1b', '_t_val_rsplit_cookie_val_#_l_2_0': '99', 'rsplit_cookie_val_#_r': 'aaaa\x1b', 'path': 'fer'}
+startresp 302 FOUND [('Content-Type', 'text/html; charset=utf-8'), ('Content-Length', '317'), ('Location', 'http://zoobarscript/script/login?nexturl=http://zoobarscript/transfer?query'), ('X-XSS-Protection', '0')]
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>Redirecting...</title>
+<h1>Redirecting...</h1>
+<p>You should be redirected automatically to target URL: <a href="script/login?nexturl=http://zoobarscript/transfer?query">script/login?nexturl=http://zoobarscript/transfer?query</a>.  If not click the link.
+Trying concrete values: {'_t_xor_2': 1L, '_t_xor_3': 2L, '_t_len_rsplit_cookie_val_#_l_1': '1', '_t_xor_1': 1L, '_t_val_cookie_val_2_0': '75', 'rsplit_cookie_val_#_l': '\x04', '_t_val_rsplit_cookie_val_#_r_4_0': '82', 'cookie_name': 'PyZoobarLogin', '_t_str0': 'tr', '_t_str1': 'ansfer', '_t_str2': 't', '_t_str3': 'ransfer', '_t_len_rsplit_cookie_val_#_r_1': 'more', '_t_len_cookie_val_1': '2', '_t_xor_0': 2L, '_t_len_rsplit_cookie_val_#_r_2': '4', 'cookie_val': 'a-', 'rsplit_cookie_val_#_r': 'aaa>', 'cookie': 'PyZoobarLogin=a-', 'path': 'fer', '_t_val_rsplit_cookie_val_#_l_1_0': '100'}
+startresp 302 FOUND [('Content-Type', 'text/html; charset=utf-8'), ('Content-Length', '317'), ('Location', 'http://zoobarscript/script/login?nexturl=http://zoobarscript/transfer?query'), ('X-XSS-Protection', '0')]
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>Redirecting...</title>
+<h1>Redirecting...</h1>
+<p>You should be redirected automatically to target URL: <a href="script/login?nexturl=http://zoobarscript/transfer?query">script/login?nexturl=http://zoobarscript/transfer?query</a>.  If not click the link.
+Trying concrete values: {'_t_xor_2': 1L, '_t_xor_3': 2L, '_t_xor_0': 2L, '_t_xor_1': 1L, 'form_recipient_present': 26L, 'rsplit_cookie_val_#_l': 'alice', 'cookie_name': 'PyZoobarLogin', '_t_str0': 'tr', '_t_str1': 'ansfer', '_t_str2': 't', '_t_str3': 'ransfer', 'cookie_val': 'alice#atok', 'form_zoobars_present': 25L, 'rsplit_cookie_val_#_r': 'atok', 'cookie': 'PyZoobarLogin=alice#atok', 'path': 'fer'}
+/home/httpd/lab3/zoobar/debug.py:23 :: __try : caught exception in function transfer:
+ Traceback (most recent call last):
+  File "/home/httpd/lab3/zoobar/debug.py", line 20, in __try
+    return f(*args, **kwargs)
+  File "/home/httpd/lab3/zoobar/login.py", line 62, in loginhelper
+    return page(*args, **kwargs)
+  File "/home/httpd/lab3/zoobar/transfer.py", line 15, in transfer
+    zoobars = eval(request.form['zoobars'])
+  File "/home/httpd/lab3/symex/symeval.py", line 42, in myeval
+    return real_eval(expr, globals, locals)
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+
+startresp 500 INTERNAL SERVER ERROR [('Content-Type', 'text/html'), ('Content-Length', '291')]
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.</p>
+
+Trying concrete values: {'_t_xor_2': 1L, '_t_xor_3': 2L, '_t_xor_0': 2L, '_t_xor_1': 1L, '_t_len__t_str1_1': '1', 'form_recipient_present': 28L, '_t_str5': 'ransfer', 'cookie_name': 'PyZoobarLogin', '_t_str0': '-', '_t_str1': 'g', '_t_str2': 'tr', '_t_str3': 'ansfer', '_t_str4': 't', 'cookie': 'PyZoobarLogin=alice#atok', 'rsplit_cookie_val_#_r': 'atok', 'rsplit_cookie_val_#_l': 'alice', 'cookie_val': 'alice#atok', 'path': 'fer', '_t_val__t_str1_1_0': '6', 'form_zoobars_val': '-g', 'form_zoobars_present': 29L}
+/home/httpd/lab3/zoobar/debug.py:23 :: __try : caught exception in function transfer:
+ Traceback (most recent call last):
+  File "/home/httpd/lab3/zoobar/debug.py", line 20, in __try
+    return f(*args, **kwargs)
+  File "/home/httpd/lab3/zoobar/login.py", line 62, in loginhelper
+    return page(*args, **kwargs)
+  File "/home/httpd/lab3/zoobar/transfer.py", line 15, in transfer
+    zoobars = eval(request.form['zoobars'])
+  File "/home/httpd/lab3/symex/symeval.py", line 42, in myeval
+    return real_eval(expr, globals, locals)
+  File "<string>", line 1, in <module>
+  File "/usr/lib/python2.7/dist-packages/werkzeug/local.py", line 385, in <lambda>
+    __neg__ = lambda x: -(x._get_current_object())
+TypeError: bad operand type for unary -: '_AppCtxGlobals'
+
+startresp 500 INTERNAL SERVER ERROR [('Content-Type', 'text/html'), ('Content-Length', '291')]
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.</p>
+
+Trying concrete values: {'_t_xor_2': 1L, '_t_xor_3': 2L, '_t_xor_0': 2L, '_t_xor_1': 1L, '_t_str4': 't', 'rsplit_cookie_val_#_l': 'alice', '_t_str0': '$', '_t_str1': '0', '_t_str2': 'tr', '_t_str3': 'ansfer', 'cookie_val': 'alice#atok', 'rsplit_cookie_val_#_r': 'atok', '_t_len__t_str1_1': '1', 'form_recipient_present': 27L, 'cookie_name': 'PyZoobarLogin', 'cookie': 'PyZoobarLogin=alice#atok', 'form_zoobars_present': 28L, 'path': 'fer', 'form_zoobars_val': '$;badstuff();0', '_t_len__t_str0_1': '1', '_t_str5': 'ransfer', '_t_val__t_str0_1_0': '66', '_t_val__t_str1_1_0': '52'}
+/home/httpd/lab3/zoobar/debug.py:23 :: __try : caught exception in function transfer:
+ Traceback (most recent call last):
+  File "/home/httpd/lab3/zoobar/debug.py", line 20, in __try
+    return f(*args, **kwargs)
+  File "/home/httpd/lab3/zoobar/login.py", line 62, in loginhelper
+    return page(*args, **kwargs)
+  File "/home/httpd/lab3/zoobar/transfer.py", line 15, in transfer
+    zoobars = eval(request.form['zoobars'])
+  File "/home/httpd/lab3/symex/symeval.py", line 26, in myeval
+    raise Exception("eval injection")
+Exception: eval injection
+
+startresp 500 INTERNAL SERVER ERROR [('Content-Type', 'text/html'), ('Content-Length', '291')]
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.</p>
+
+Trying concrete values: {'_t_xor_2': 1L, '_t_xor_3': 1L, '_t_xor_0': 2L, '_t_xor_1': 1L, '_t_xor_4': 1L, '_t_xor_5': 2L, '_t_str4': 'ansfer', '_t_str5': 't', '_t_str6': 'ransfer', '_t_str0': '', '_t_str1': '0', '_t_str2': '', '_t_str3': 'tr', 'cookie_val': 'alice#atok', 'rsplit_cookie_val_#_r': 'atok', '_t_str14': '', '_t_str13': '0', 'form_recipient_present': 30L, 'cookie_name': 'PyZoobarLogin', 'cookie': 'PyZoobarLogin=alice#atok', 'form_zoobars_present': 31L, 'path': 'fer', 'form_zoobars_val': '0', 'rsplit_cookie_val_#_l': 'alice'}
+Traceback (most recent call last):
+  File "/home/httpd/lab3/zoobar/transfer.py", line 17, in transfer
+    request.form['recipient'], zoobars)
+  File "/home/httpd/lab3/zoobar/bank.py", line 12, in transfer
+    recipient_balance = recipientp.zoobars + zoobars
+AttributeError: 'NoneType' object has no attribute 'zoobars'
+startresp 200 OK [('Content-Type', 'text/html; charset=utf-8'), ('Content-Length', '1683'), ('X-XSS-Protection', '0')]
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="/zoobar/media/zoobar.css">
+        <title>
+          Transfer - Zoobar Foundation
+        </title>
+    </head>
+    <body>
+        
+        
+        
+        <div id="header">
+          <div><a href="script/logout">Log out alice</a></div>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+      <h1><a href="script/">Zoobar Foundation for Objective
+                      Thinking</a></h1>
+      <h2>Supporting the important
+          thinkers of the next generation</h2>
+      
+      <div id="main" class="centerpiece">
+        <table>
+          <tr><td>
+             <p>
+               
+                 
+                   <a href="script/">Home</a>
+                 
+                  | 
+               
+                 
+                   <a href="script/users">Users</a>
+                 
+                  | 
+               
+                 
+                   <b>Transfer</b>
+                 
+                 
+               
+             </p>
+          </td></tr>
+          <tr><td class="main">
+            
+<b>Balance: </b><span id="myZoobars"></span> zoobars<br />
+<form method="POST" name="transferform" action="script/transfer">
+<p>Send <input name="zoobars" type="text" value="0" size=5> zoobars</p>
+<p>to <input name=recipient type=text value="" size=10></p>
+<input type="submit" name="submission" value="Send">
+</form>
+
+<span class="warning">Transfer to  failed</span>
+
+<script type="text/javascript" src="script/zoobarjs"></script>
+
+          </td></tr>
+        </table>
+      </div>
+      
+      
+    </body>
+</html>
+Trying concrete values: {'_t_xor_2': 1L, '_t_xor_3': 1L, '_t_xor_0': 2L, '_t_xor_1': 1L, '_t_xor_4': 1L, '_t_xor_5': 2L, '_t_str4': 'ansfer', '_t_str5': 't', '_t_str6': 'ransfer', '_t_str0': '', '_t_str1': '1', '_t_str2': '', '_t_str3': 'tr', 'cookie_val': 'alice#atok', 'rsplit_cookie_val_#_r': 'atok', '_t_str14': '', '_t_str13': '1', 'form_recipient_present': 30L, 'cookie_name': 'PyZoobarLogin', 'cookie': 'PyZoobarLogin=alice#atok', 'form_zoobars_present': 31L, 'path': 'fer', 'form_zoobars_val': '1', 'rsplit_cookie_val_#_l': 'alice'}
+Traceback (most recent call last):
+  File "/home/httpd/lab3/zoobar/transfer.py", line 17, in transfer
+    request.form['recipient'], zoobars)
+  File "/home/httpd/lab3/zoobar/bank.py", line 12, in transfer
+    recipient_balance = recipientp.zoobars + zoobars
+AttributeError: 'NoneType' object has no attribute 'zoobars'
+startresp 200 OK [('Content-Type', 'text/html; charset=utf-8'), ('Content-Length', '1681'), ('X-XSS-Protection', '0')]
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="/zoobar/media/zoobar.css">
+        <title>
+          Transfer - Zoobar Foundation
+        </title>
+    </head>
+    <body>
+        
+        
+        
+        <div id="header">
+          <div><a href="script/logout">Log out alice</a></div>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+      <h1><a href="script/">Zoobar Foundation for Sensible
+                      Dialogue</a></h1>
+      <h2>Supporting the meritorious
+          thinkers of the 21st-century</h2>
+      
+      <div id="main" class="centerpiece">
+        <table>
+          <tr><td>
+             <p>
+               
+                 
+                   <a href="script/">Home</a>
+                 
+                  | 
+               
+                 
+                   <a href="script/users">Users</a>
+                 
+                  | 
+               
+                 
+                   <b>Transfer</b>
+                 
+                 
+               
+             </p>
+          </td></tr>
+          <tr><td class="main">
+            
+<b>Balance: </b><span id="myZoobars"></span> zoobars<br />
+<form method="POST" name="transferform" action="script/transfer">
+<p>Send <input name="zoobars" type="text" value="1" size=5> zoobars</p>
+<p>to <input name=recipient type=text value="" size=10></p>
+<input type="submit" name="submission" value="Send">
+</form>
+
+<span class="warning">Transfer to  failed</span>
+
+<script type="text/javascript" src="script/zoobarjs"></script>
+
+          </td></tr>
+        </table>
+      </div>
+      
+      
+    </body>
+</html>
+Trying concrete values: {'_t_xor_2': 1L, '_t_xor_3': 2L, '_t_xor_0': 2L, '_t_xor_1': 1L, '_t_xor_4': 1L, '_t_xor_5': 2L, '_t_str4': 'ansfer', '_t_str5': 't', '_t_str6': 'ransfer', '_t_str0': '', '_t_str1': '10', '_t_str2': '', '_t_str3': 'tr', 'cookie_val': 'alice#atok', 'rsplit_cookie_val_#_r': 'atok', '_t_str14': '0', '_t_str13': '1', 'form_recipient_present': 30L, 'cookie_name': 'PyZoobarLogin', 'cookie': 'PyZoobarLogin=alice#atok', 'form_zoobars_present': 31L, 'path': 'fer', 'form_zoobars_val': '10', 'rsplit_cookie_val_#_l': 'alice'}
+Traceback (most recent call last):
+  File "/home/httpd/lab3/zoobar/transfer.py", line 17, in transfer
+    request.form['recipient'], zoobars)
+  File "/home/httpd/lab3/zoobar/bank.py", line 12, in transfer
+    recipient_balance = recipientp.zoobars + zoobars
+AttributeError: 'NoneType' object has no attribute 'zoobars'
+startresp 200 OK [('Content-Type', 'text/html; charset=utf-8'), ('Content-Length', '1690'), ('X-XSS-Protection', '0')]
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="/zoobar/media/zoobar.css">
+        <title>
+          Transfer - Zoobar Foundation
+        </title>
+    </head>
+    <body>
+        
+        
+        
+        <div id="header">
+          <div><a href="script/logout">Log out alice</a></div>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+      <h1><a href="script/">Zoobar Foundation for Trustworthy
+                      Policy</a></h1>
+      <h2>Supporting the brightest
+          minds of the information superhighway</h2>
+      
+      <div id="main" class="centerpiece">
+        <table>
+          <tr><td>
+             <p>
+               
+                 
+                   <a href="script/">Home</a>
+                 
+                  | 
+               
+                 
+                   <a href="script/users">Users</a>
+                 
+                  | 
+               
+                 
+                   <b>Transfer</b>
+                 
+                 
+               
+             </p>
+          </td></tr>
+          <tr><td class="main">
+            
+<b>Balance: </b><span id="myZoobars"></span> zoobars<br />
+<form method="POST" name="transferform" action="script/transfer">
+<p>Send <input name="zoobars" type="text" value="10" size=5> zoobars</p>
+<p>to <input name=recipient type=text value="" size=10></p>
+<input type="submit" name="submission" value="Send">
+</form>
+
+<span class="warning">Transfer to  failed</span>
+
+<script type="text/javascript" src="script/zoobarjs"></script>
+
+          </td></tr>
+        </table>
+      </div>
+      
+      
+    </body>
+</html>
+Trying concrete values: {'_t_xor_2': 1L, '_t_xor_3': 3L, '_t_xor_0': 2L, '_t_xor_1': 1L, '_t_xor_4': 1L, '_t_xor_5': 2L, '_t_str4': 'ansfer', '_t_str5': 't', '_t_str6': 'ransfer', '_t_str0': '', '_t_str1': '100', '_t_str2': '', '_t_str3': 'tr', 'cookie_val': 'alice#atok', 'rsplit_cookie_val_#_r': 'atok', '_t_str14': '00', '_t_str13': '1', 'form_recipient_present': 30L, 'cookie_name': 'PyZoobarLogin', 'cookie': 'PyZoobarLogin=alice#atok', 'form_zoobars_present': 31L, 'path': 'fer', 'form_zoobars_val': '100', 'rsplit_cookie_val_#_l': 'alice'}
+Traceback (most recent call last):
+  File "/home/httpd/lab3/zoobar/transfer.py", line 17, in transfer
+    request.form['recipient'], zoobars)
+  File "/home/httpd/lab3/zoobar/bank.py", line 12, in transfer
+    recipient_balance = recipientp.zoobars + zoobars
+AttributeError: 'NoneType' object has no attribute 'zoobars'
+startresp 200 OK [('Content-Type', 'text/html; charset=utf-8'), ('Content-Length', '1692'), ('X-XSS-Protection', '0')]
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="/zoobar/media/zoobar.css">
+        <title>
+          Transfer - Zoobar Foundation
+        </title>
+    </head>
+    <body>
+        
+        
+        
+        <div id="header">
+          <div><a href="script/logout">Log out alice</a></div>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+      <h1><a href="script/">Zoobar Foundation for Ethical
+                      Learning</a></h1>
+      <h2>Supporting the skillful
+          advocates of the information superhighway</h2>
+      
+      <div id="main" class="centerpiece">
+        <table>
+          <tr><td>
+             <p>
+               
+                 
+                   <a href="script/">Home</a>
+                 
+                  | 
+               
+                 
+                   <a href="script/users">Users</a>
+                 
+                  | 
+               
+                 
+                   <b>Transfer</b>
+                 
+                 
+               
+             </p>
+          </td></tr>
+          <tr><td class="main">
+            
+<b>Balance: </b><span id="myZoobars"></span> zoobars<br />
+<form method="POST" name="transferform" action="script/transfer">
+<p>Send <input name="zoobars" type="text" value="100" size=5> zoobars</p>
+<p>to <input name=recipient type=text value="" size=10></p>
+<input type="submit" name="submission" value="Send">
+</form>
+
+<span class="warning">Transfer to  failed</span>
+
+<script type="text/javascript" src="script/zoobarjs"></script>
+
+          </td></tr>
+        </table>
+      </div>
+      
+      
+    </body>
+</html>
+Trying concrete values: {'_t_xor_2': 1L, '_t_xor_3': 2L, '_t_xor_0': 2L, '_t_xor_1': 1L, 'form_recipient_present': 27L, '_t_str5': 'ransfer', 'cookie_name': 'PyZoobarLogin', '_t_val_form_zoobars_val_2_0': '78', '_t_str2': 'tr', '_t_str3': 'ansfer', '_t_str4': 't', 'cookie': 'PyZoobarLogin=alice#atok', 'rsplit_cookie_val_#_r': 'atok', 'rsplit_cookie_val_#_l': 'alice', 'cookie_val': 'alice#atok', 'path': 'fer', '_t_len_form_zoobars_val_1': '2', 'form_zoobars_val': 'a:', 'form_zoobars_present': 28L}
+/home/httpd/lab3/zoobar/debug.py:23 :: __try : caught exception in function transfer:
+ Traceback (most recent call last):
+  File "/home/httpd/lab3/zoobar/debug.py", line 20, in __try
+    return f(*args, **kwargs)
+  File "/home/httpd/lab3/zoobar/login.py", line 62, in loginhelper
+    return page(*args, **kwargs)
+  File "/home/httpd/lab3/zoobar/transfer.py", line 15, in transfer
+    zoobars = eval(request.form['zoobars'])
+  File "/home/httpd/lab3/symex/symeval.py", line 42, in myeval
+    return real_eval(expr, globals, locals)
+  File "<string>", line 1
+    a:
+     ^
+SyntaxError: unexpected EOF while parsing
+
+startresp 500 INTERNAL SERVER ERROR [('Content-Type', 'text/html'), ('Content-Length', '291')]
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.</p>
+
+Trying concrete values: {'_t_xor_2': 1L, '_t_xor_3': 2L, '_t_xor_0': 2L, '_t_xor_1': 1L, 'rsplit_cookie_val_#_r': 'atok', '_t_str4': 't', 'rsplit_cookie_val_#_l': 'alice', '_t_str0': '\x04', '_t_str1': 'a5', '_t_str2': 'tr', '_t_str3': 'ansfer', 'cookie_val': 'alice#atok', '_t_len__t_str0_1': '1', '_t_len__t_str1_1': '2', 'form_recipient_present': 28L, '_t_val__t_str1_2_0': '57', 'cookie_name': 'PyZoobarLogin', 'cookie': 'PyZoobarLogin=alice#atok', 'form_zoobars_present': 29L, 'path': 'fer', 'form_zoobars_val': '\x04a5', '_t_str5': 'ransfer', '_t_val__t_str0_1_0': '100'}
+/home/httpd/lab3/zoobar/debug.py:23 :: __try : caught exception in function transfer:
+ Traceback (most recent call last):
+  File "/home/httpd/lab3/zoobar/debug.py", line 20, in __try
+    return f(*args, **kwargs)
+  File "/home/httpd/lab3/zoobar/login.py", line 62, in loginhelper
+    return page(*args, **kwargs)
+  File "/home/httpd/lab3/zoobar/transfer.py", line 15, in transfer
+    zoobars = eval(request.form['zoobars'])
+  File "/home/httpd/lab3/symex/symeval.py", line 42, in myeval
+    return real_eval(expr, globals, locals)
+  File "<string>", line 1
+    a5
+    ^
+SyntaxError: invalid syntax
+
+startresp 500 INTERNAL SERVER ERROR [('Content-Type', 'text/html'), ('Content-Length', '291')]
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.</p>
+
+Trying concrete values: {'_t_xor_2': 0L, '_t_xor_3': 1L, '_t_xor_0': 2L, '_t_xor_1': 1L, '_t_xor_4': 2L, '_t_str4': 'ansfer', '_t_str5': 't', '_t_str6': 'ransfer', '_t_str0': '-', '_t_str1': '0', '_t_str2': '', '_t_str3': 'tr', 'cookie_val': 'alice#atok', 'rsplit_cookie_val_#_r': 'atok', '_t_str14': '0', '_t_str13': '-', 'form_recipient_present': 31L, 'cookie_name': 'PyZoobarLogin', 'cookie': 'PyZoobarLogin=alice#atok', 'form_zoobars_present': 32L, 'path': 'fer', 'form_zoobars_val': '-0', 'rsplit_cookie_val_#_l': 'alice'}
+Traceback (most recent call last):
+  File "/home/httpd/lab3/zoobar/transfer.py", line 17, in transfer
+    request.form['recipient'], zoobars)
+  File "/home/httpd/lab3/zoobar/bank.py", line 12, in transfer
+    recipient_balance = recipientp.zoobars + zoobars
+AttributeError: 'NoneType' object has no attribute 'zoobars'
+startresp 200 OK [('Content-Type', 'text/html; charset=utf-8'), ('Content-Length', '1687'), ('X-XSS-Protection', '0')]
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="/zoobar/media/zoobar.css">
+        <title>
+          Transfer - Zoobar Foundation
+        </title>
+    </head>
+    <body>
+        
+        
+        
+        <div id="header">
+          <div><a href="script/logout">Log out alice</a></div>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+      <h1><a href="script/">Zoobar Foundation for Sustainable
+                      Advocacy</a></h1>
+      <h2>Supporting the best
+          minds of the information superhighway</h2>
+      
+      <div id="main" class="centerpiece">
+        <table>
+          <tr><td>
+             <p>
+               
+                 
+                   <a href="script/">Home</a>
+                 
+                  | 
+               
+                 
+                   <a href="script/users">Users</a>
+                 
+                  | 
+               
+                 
+                   <b>Transfer</b>
+                 
+                 
+               
+             </p>
+          </td></tr>
+          <tr><td class="main">
+            
+<b>Balance: </b><span id="myZoobars"></span> zoobars<br />
+<form method="POST" name="transferform" action="script/transfer">
+<p>Send <input name="zoobars" type="text" value="-0" size=5> zoobars</p>
+<p>to <input name=recipient type=text value="" size=10></p>
+<input type="submit" name="submission" value="Send">
+</form>
+
+<span class="warning">Transfer to  failed</span>
+
+<script type="text/javascript" src="script/zoobarjs"></script>
+
+          </td></tr>
+        </table>
+      </div>
+      
+      
+    </body>
+</html>
+Trying concrete values: {'_t_xor_2': 0L, '_t_xor_3': 1L, '_t_xor_0': 2L, '_t_xor_1': 1L, '_t_xor_4': 2L, '_t_str4': 'ansfer', '_t_str5': 't', '_t_str6': 'ransfer', '_t_str0': '-', '_t_str1': '1', '_t_str2': '', '_t_str3': 'tr', 'cookie_val': 'alice#atok', 'rsplit_cookie_val_#_r': 'atok', '_t_str14': '1', '_t_str13': '-', 'form_recipient_present': 31L, 'cookie_name': 'PyZoobarLogin', 'cookie': 'PyZoobarLogin=alice#atok', 'form_zoobars_present': 32L, 'path': 'fer', 'form_zoobars_val': '-1', 'rsplit_cookie_val_#_l': 'alice'}
+Traceback (most recent call last):
+  File "/home/httpd/lab3/zoobar/transfer.py", line 17, in transfer
+    request.form['recipient'], zoobars)
+  File "/home/httpd/lab3/zoobar/bank.py", line 12, in transfer
+    recipient_balance = recipientp.zoobars + zoobars
+AttributeError: 'NoneType' object has no attribute 'zoobars'
+startresp 200 OK [('Content-Type', 'text/html; charset=utf-8'), ('Content-Length', '1679'), ('X-XSS-Protection', '0')]
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="/zoobar/media/zoobar.css">
+        <title>
+          Transfer - Zoobar Foundation
+        </title>
+    </head>
+    <body>
+        
+        
+        
+        <div id="header">
+          <div><a href="script/logout">Log out alice</a></div>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+      <h1><a href="script/">Zoobar Foundation for Sensible
+                      Thinking</a></h1>
+      <h2>Supporting the skillful
+          minds of the next generation</h2>
+      
+      <div id="main" class="centerpiece">
+        <table>
+          <tr><td>
+             <p>
+               
+                 
+                   <a href="script/">Home</a>
+                 
+                  | 
+               
+                 
+                   <a href="script/users">Users</a>
+                 
+                  | 
+               
+                 
+                   <b>Transfer</b>
+                 
+                 
+               
+             </p>
+          </td></tr>
+          <tr><td class="main">
+            
+<b>Balance: </b><span id="myZoobars"></span> zoobars<br />
+<form method="POST" name="transferform" action="script/transfer">
+<p>Send <input name="zoobars" type="text" value="-1" size=5> zoobars</p>
+<p>to <input name=recipient type=text value="" size=10></p>
+<input type="submit" name="submission" value="Send">
+</form>
+
+<span class="warning">Transfer to  failed</span>
+
+<script type="text/javascript" src="script/zoobarjs"></script>
+
+          </td></tr>
+        </table>
+      </div>
+      
+      
+    </body>
+</html>
+Trying concrete values: {'_t_xor_2': 0L, '_t_xor_3': 1L, '_t_xor_0': 2L, '_t_xor_1': 1L, '_t_xor_4': 2L, '_t_str4': 'ansfer', '_t_str5': 't', '_t_str6': 'ransfer', '_t_str0': '-', '_t_str1': '10', '_t_str2': '', '_t_str3': 'tr', 'cookie_val': 'alice#atok', 'rsplit_cookie_val_#_r': 'atok', '_t_str14': '10', '_t_str13': '-', 'form_recipient_present': 31L, 'cookie_name': 'PyZoobarLogin', 'cookie': 'PyZoobarLogin=alice#atok', 'form_zoobars_present': 32L, 'path': 'fer', 'form_zoobars_val': '-10', 'rsplit_cookie_val_#_l': 'alice'}
+Traceback (most recent call last):
+  File "/home/httpd/lab3/zoobar/transfer.py", line 17, in transfer
+    request.form['recipient'], zoobars)
+  File "/home/httpd/lab3/zoobar/bank.py", line 12, in transfer
+    recipient_balance = recipientp.zoobars + zoobars
+AttributeError: 'NoneType' object has no attribute 'zoobars'
+startresp 200 OK [('Content-Type', 'text/html; charset=utf-8'), ('Content-Length', '1692'), ('X-XSS-Protection', '0')]
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="/zoobar/media/zoobar.css">
+        <title>
+          Transfer - Zoobar Foundation
+        </title>
+    </head>
+    <body>
+        
+        
+        
+        <div id="header">
+          <div><a href="script/logout">Log out alice</a></div>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+      <h1><a href="script/">Zoobar Foundation for Ethical
+                      Thinking</a></h1>
+      <h2>Supporting the shrewd
+          researchers of the information superhighway</h2>
+      
+      <div id="main" class="centerpiece">
+        <table>
+          <tr><td>
+             <p>
+               
+                 
+                   <a href="script/">Home</a>
+                 
+                  | 
+               
+                 
+                   <a href="script/users">Users</a>
+                 
+                  | 
+               
+                 
+                   <b>Transfer</b>
+                 
+                 
+               
+             </p>
+          </td></tr>
+          <tr><td class="main">
+            
+<b>Balance: </b><span id="myZoobars"></span> zoobars<br />
+<form method="POST" name="transferform" action="script/transfer">
+<p>Send <input name="zoobars" type="text" value="-10" size=5> zoobars</p>
+<p>to <input name=recipient type=text value="" size=10></p>
+<input type="submit" name="submission" value="Send">
+</form>
+
+<span class="warning">Transfer to  failed</span>
+
+<script type="text/javascript" src="script/zoobarjs"></script>
+
+          </td></tr>
+        </table>
+      </div>
+      
+      
+    </body>
+</html>
+Trying concrete values: {'_t_xor_2': 0L, '_t_xor_3': 1L, '_t_xor_0': 2L, '_t_xor_1': 1L, '_t_xor_4': 2L, '_t_str4': 'ansfer', '_t_str5': 't', '_t_str6': 'ransfer', '_t_str0': '-', '_t_str1': '100', '_t_str2': '', '_t_str3': 'tr', 'cookie_val': 'alice#atok', 'rsplit_cookie_val_#_r': 'atok', '_t_str14': '100', '_t_str13': '-', 'form_recipient_present': 31L, 'cookie_name': 'PyZoobarLogin', 'cookie': 'PyZoobarLogin=alice#atok', 'form_zoobars_present': 32L, 'path': 'fer', 'form_zoobars_val': '-100', 'rsplit_cookie_val_#_l': 'alice'}
+Traceback (most recent call last):
+  File "/home/httpd/lab3/zoobar/transfer.py", line 17, in transfer
+    request.form['recipient'], zoobars)
+  File "/home/httpd/lab3/zoobar/bank.py", line 12, in transfer
+    recipient_balance = recipientp.zoobars + zoobars
+AttributeError: 'NoneType' object has no attribute 'zoobars'
+startresp 200 OK [('Content-Type', 'text/html; charset=utf-8'), ('Content-Length', '1686'), ('X-XSS-Protection', '0')]
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="/zoobar/media/zoobar.css">
+        <title>
+          Transfer - Zoobar Foundation
+        </title>
+    </head>
+    <body>
+        
+        
+        
+        <div id="header">
+          <div><a href="script/logout">Log out alice</a></div>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+      <h1><a href="script/">Zoobar Foundation for Patriotic
+                      Discourse</a></h1>
+      <h2>Supporting the meritorious
+          thinkers of the 21st-century</h2>
+      
+      <div id="main" class="centerpiece">
+        <table>
+          <tr><td>
+             <p>
+               
+                 
+                   <a href="script/">Home</a>
+                 
+                  | 
+               
+                 
+                   <a href="script/users">Users</a>
+                 
+                  | 
+               
+                 
+                   <b>Transfer</b>
+                 
+                 
+               
+             </p>
+          </td></tr>
+          <tr><td class="main">
+            
+<b>Balance: </b><span id="myZoobars"></span> zoobars<br />
+<form method="POST" name="transferform" action="script/transfer">
+<p>Send <input name="zoobars" type="text" value="-100" size=5> zoobars</p>
+<p>to <input name=recipient type=text value="" size=10></p>
+<input type="submit" name="submission" value="Send">
+</form>
+
+<span class="warning">Transfer to  failed</span>
+
+<script type="text/javascript" src="script/zoobarjs"></script>
+
+          </td></tr>
+        </table>
+      </div>
+      
+      
+    </body>
+</html>
+Trying concrete values: {'_t_xor_2': 1L, '_t_xor_3': 1L, '_t_xor_0': 2L, '_t_xor_1': 1L, '_t_xor_4': 2L, '_t_str4': 'ansfer', 'rsplit_cookie_val_#_l': 'alice', '_t_str6': 'ransfer', '_t_val__t_str13_1_0': '118', '_t_str0': '', '_t_str1': '\x16at', '_t_str2': '', '_t_str3': 'tr', 'cookie_val': 'alice#atok', 'rsplit_cookie_val_#_r': 'atok', '_t_str14': 'at', '_t_str13': '\x16', 'form_recipient_present': 30L, 'cookie_name': 'PyZoobarLogin', '_t_str18': 'at', 'cookie': 'PyZoobarLogin=alice#atok', 'form_zoobars_present': 31L, 'path': 'fer', '_t_len__t_str13_1': '1', 'form_zoobars_val': '\x16at', '_t_len__t_str14_1': '2', '_t_str5': 't', '_t_val__t_str14_2_0': '19'}
+/home/httpd/lab3/zoobar/debug.py:23 :: __try : caught exception in function transfer:
+ Traceback (most recent call last):
+  File "/home/httpd/lab3/zoobar/debug.py", line 20, in __try
+    return f(*args, **kwargs)
+  File "/home/httpd/lab3/zoobar/login.py", line 62, in loginhelper
+    return page(*args, **kwargs)
+  File "/home/httpd/lab3/zoobar/transfer.py", line 15, in transfer
+    zoobars = eval(request.form['zoobars'])
+  File "/home/httpd/lab3/symex/symeval.py", line 42, in myeval
+    return real_eval(expr, globals, locals)
+  File "<string>", line 1
+    at
+    ^
+SyntaxError: invalid syntax
+
+startresp 500 INTERNAL SERVER ERROR [('Content-Type', 'text/html'), ('Content-Length', '291')]
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.</p>
+
+Trying concrete values: {'_t_xor_2': 1L, '_t_xor_3': 1L, '_t_xor_0': 2L, '_t_xor_1': 1L, '_t_xor_4': 2L, '_t_str4': 'ansfer', 'rsplit_cookie_val_#_l': 'alice', '_t_str6': 'ransfer', '_t_val__t_str13_1_0': '106', '_t_str0': '', '_t_str1': '\naaaa;', '_t_str2': '', '_t_str3': 'tr', 'cookie_val': 'alice#atok', 'rsplit_cookie_val_#_r': 'atok', '_t_str14': 'aaaa;', '_t_str13': '\n', 'form_recipient_present': 30L, 'cookie_name': 'PyZoobarLogin', '_t_str18': 'aaaa;', '_t_val__t_str14_5_0': '79', 'cookie': 'PyZoobarLogin=alice#atok', 'form_zoobars_present': 31L, 'path': 'fer', '_t_len__t_str13_1': '1', 'form_zoobars_val': '\naaaa;', '_t_len__t_str14_2': '5', '_t_len__t_str14_1': 'more', '_t_str5': 't'}
+/home/httpd/lab3/zoobar/debug.py:23 :: __try : caught exception in function transfer:
+ Traceback (most recent call last):
+  File "/home/httpd/lab3/zoobar/debug.py", line 20, in __try
+    return f(*args, **kwargs)
+  File "/home/httpd/lab3/zoobar/login.py", line 62, in loginhelper
+    return page(*args, **kwargs)
+  File "/home/httpd/lab3/zoobar/transfer.py", line 15, in transfer
+    zoobars = eval(request.form['zoobars'])
+  File "/home/httpd/lab3/symex/symeval.py", line 42, in myeval
+    return real_eval(expr, globals, locals)
+  File "<string>", line 2
+    aaaa;
+        ^
+SyntaxError: invalid syntax
+
+startresp 500 INTERNAL SERVER ERROR [('Content-Type', 'text/html'), ('Content-Length', '291')]
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.</p>
+
+Trying concrete values: {'_t_xor_2': 1L, '_t_xor_3': 1L, '_t_xor_0': 2L, '_t_xor_1': 1L, '_t_xor_4': 2L, '_t_str4': 'ansfer', 'rsplit_cookie_val_#_l': 'alice', '_t_str6': 'ransfer', '_t_val__t_str13_1_0': '106', '_t_str0': '', '_t_str1': '\naaaa;', '_t_str2': '', '_t_str3': 'tr', 'cookie_val': 'alice#atok', 'rsplit_cookie_val_#_r': 'atok', '_t_str14': 'aaaa;', '_t_str13': '\n', 'form_recipient_present': 30L, 'cookie_name': 'PyZoobarLogin', '_t_str18': 'aaaa;', '_t_val__t_str14_5_0': '79', 'cookie': 'PyZoobarLogin=alice#atok', 'form_zoobars_present': 31L, 'path': 'fer', '_t_len__t_str13_1': '1', 'form_zoobars_val': '\naaaa;', '_t_len__t_str14_2': '5', '_t_len__t_str14_1': 'more', '_t_str5': 't'}
+/home/httpd/lab3/zoobar/debug.py:23 :: __try : caught exception in function transfer:
+ Traceback (most recent call last):
+  File "/home/httpd/lab3/zoobar/debug.py", line 20, in __try
+    return f(*args, **kwargs)
+  File "/home/httpd/lab3/zoobar/login.py", line 62, in loginhelper
+    return page(*args, **kwargs)
+  File "/home/httpd/lab3/zoobar/transfer.py", line 15, in transfer
+    zoobars = eval(request.form['zoobars'])
+  File "/home/httpd/lab3/symex/symeval.py", line 42, in myeval
+    return real_eval(expr, globals, locals)
+  File "<string>", line 2
+    aaaa;
+        ^
+SyntaxError: invalid syntax
+
+startresp 500 INTERNAL SERVER ERROR [('Content-Type', 'text/html'), ('Content-Length', '291')]
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.</p>
+
+Trying concrete values: {'_t_xor_2': 2L, '_t_xor_3': 1L, '_t_xor_0': 2L, '_t_xor_1': 1L, '_t_xor_4': 2L, '_t_val__t_str17_2_0': '0', '_t_str4': 'ansfer', 'rsplit_cookie_val_#_l': 'alice', '_t_str6': 'ransfer', '_t_str0': '', '_t_str1': '$', '_t_str2': '', '_t_str3': 'tr', 'cookie_val': 'alice#atok', 'rsplit_cookie_val_#_r': 'atok', '_t_val_form_zoobars_val_1_0': '66', '_t_val__t_str18_1_0': '121', '_t_str17': 'aa', '_t_str14': '', '_t_str13': '$', 'form_recipient_present': 30L, 'cookie_name': 'PyZoobarLogin', '_t_str18': '\x19', 'cookie': 'PyZoobarLogin=alice#atok', 'form_zoobars_present': 31L, 'path': 'fer', '_t_len__t_str18_1': '1', '_t_len_form_zoobars_val_1': '1', 'form_zoobars_val': '$', '_t_str5': 't', '_t_len__t_str17_1': '2'}
+/home/httpd/lab3/zoobar/debug.py:23 :: __try : caught exception in function transfer:
+ Traceback (most recent call last):
+  File "/home/httpd/lab3/zoobar/debug.py", line 20, in __try
+    return f(*args, **kwargs)
+  File "/home/httpd/lab3/zoobar/login.py", line 62, in loginhelper
+    return page(*args, **kwargs)
+  File "/home/httpd/lab3/zoobar/transfer.py", line 15, in transfer
+    zoobars = eval(request.form['zoobars'])
+  File "/home/httpd/lab3/symex/symeval.py", line 42, in myeval
+    return real_eval(expr, globals, locals)
+  File "<string>", line 1
+    $
+    ^
+SyntaxError: unexpected EOF while parsing
+
+startresp 500 INTERNAL SERVER ERROR [('Content-Type', 'text/html'), ('Content-Length', '291')]
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.</p>
+
+Trying concrete values: {'_t_xor_2': 1L, '_t_val_rsplit_cookie_val_#_r_3_0': '118', '_t_xor_0': 2L, '_t_xor_1': 1L, '_t_xor_3': 2L, 'rsplit_cookie_val_#_l': 'bob', 'cookie_name': 'PyZoobarLogin', '_t_str0': 'tr', '_t_str1': 'ansfer', '_t_str2': 't', '_t_str3': 'ransfer', '_t_len_rsplit_cookie_val_#_r_1': 'more', '_t_len_rsplit_cookie_val_#_r_2': '3', 'cookie_val': 'bob#aa\x16', 'rsplit_cookie_val_#_r': 'aa\x16', 'cookie': 'PyZoobarLogin=bob#aa\x16', 'path': 'fer'}
+startresp 302 FOUND [('Content-Type', 'text/html; charset=utf-8'), ('Content-Length', '317'), ('Location', 'http://zoobarscript/script/login?nexturl=http://zoobarscript/transfer?query'), ('X-XSS-Protection', '0')]
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>Redirecting...</title>
+<h1>Redirecting...</h1>
+<p>You should be redirected automatically to target URL: <a href="script/login?nexturl=http://zoobarscript/transfer?query">script/login?nexturl=http://zoobarscript/transfer?query</a>.  If not click the link.
+Trying concrete values: {'_t_xor_2': 1L, '_t_xor_3': 2L, '_t_len_rsplit_cookie_val_#_l_1': '1', '_t_xor_1': 1L, 'cookie': 'PyZoobarLogin=7#aaaabV', 'rsplit_cookie_val_#_l': '7', 'cookie_name': 'PyZoobarLogin', '_t_str0': 'tr', '_t_str1': 'ansfer', '_t_str2': 't', '_t_str3': 'ransfer', '_t_len_rsplit_cookie_val_#_r_1': 'more', '_t_val_rsplit_cookie_val_#_l_1_0': '59', '_t_xor_0': 2L, '_t_len_rsplit_cookie_val_#_r_2': 'more', 'cookie_val': '7#aaaabV', 'rsplit_cookie_val_#_r': 'aaaabV', 'path': 'fer', '_t_val_rsplit_cookie_val_#_r_6_0': 'more', '_t_val_rsplit_cookie_val_#_r_6_1': '175', '_t_len_rsplit_cookie_val_#_r_3': '6'}
+startresp 302 FOUND [('Content-Type', 'text/html; charset=utf-8'), ('Content-Length', '317'), ('Location', 'http://zoobarscript/script/login?nexturl=http://zoobarscript/transfer?query'), ('X-XSS-Protection', '0')]
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>Redirecting...</title>
+<h1>Redirecting...</h1>
+<p>You should be redirected automatically to target URL: <a href="script/login?nexturl=http://zoobarscript/transfer?query">script/login?nexturl=http://zoobarscript/transfer?query</a>.  If not click the link.
+Trying concrete values: {'_t_xor_2': 1L, '_t_xor_3': 2L, '_t_xor_0': 2L, '_t_xor_1': 1L, '_t_str4': 't', '_t_str5': 'ransfer', '_t_str0': 'aa|', '_t_str1': 'a\x11', '_t_str2': 'tr', '_t_str3': 'ansfer', '_t_len__t_str0_2': '3', 'rsplit_cookie_val_#_r': 'ar', '_t_val_rsplit_cookie_val_#_r_2_0': '17', 'cookie_val': 'aa|#a\x11#ar', '_t_len__t_str1_1': '2', '_t_val__t_str1_2_0': '113', 'cookie_name': 'PyZoobarLogin', '_t_val__t_str0_3_0': '92', 'cookie': 'PyZoobarLogin=aa|#a\x11#ar', 'path': 'fer', '_t_len__t_str0_1': 'more', '_t_len_rsplit_cookie_val_#_r_1': '2', 'rsplit_cookie_val_#_l': 'aa|#a\x11'}
+startresp 302 FOUND [('Content-Type', 'text/html; charset=utf-8'), ('Content-Length', '317'), ('Location', 'http://zoobarscript/script/login?nexturl=http://zoobarscript/transfer?query'), ('X-XSS-Protection', '0')]
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>Redirecting...</title>
+<h1>Redirecting...</h1>
+<p>You should be redirected automatically to target URL: <a href="script/login?nexturl=http://zoobarscript/transfer?query">script/login?nexturl=http://zoobarscript/transfer?query</a>.  If not click the link.
+Trying concrete values: {'_t_xor_2': 1L, '_t_xor_3': 1L, '_t_xor_0': 2L, '_t_xor_1': 1L, '_t_xor_4': 2L, '_t_str4': 'ansfer', '_t_str5': 't', '_t_str6': 'ransfer', '_t_str0': '-', '_t_str1': '', '_t_str2': '', '_t_str3': 'tr', 'cookie_val': 'alice#atok', 'rsplit_cookie_val_#_r': 'atok', '_t_str14': '', '_t_str13': '-', 'form_recipient_present': 31L, 'cookie_name': 'PyZoobarLogin', 'cookie': 'PyZoobarLogin=alice#atok', 'form_zoobars_present': 32L, 'path': 'fer', 'form_zoobars_val': '-', 'rsplit_cookie_val_#_l': 'alice'}
+/home/httpd/lab3/zoobar/debug.py:23 :: __try : caught exception in function transfer:
+ Traceback (most recent call last):
+  File "/home/httpd/lab3/zoobar/debug.py", line 20, in __try
+    return f(*args, **kwargs)
+  File "/home/httpd/lab3/zoobar/login.py", line 62, in loginhelper
+    return page(*args, **kwargs)
+  File "/home/httpd/lab3/zoobar/transfer.py", line 15, in transfer
+    zoobars = eval(request.form['zoobars'])
+  File "/home/httpd/lab3/symex/symeval.py", line 42, in myeval
+    return real_eval(expr, globals, locals)
+  File "<string>", line 1
+    -
+    ^
+SyntaxError: unexpected EOF while parsing
+
+startresp 500 INTERNAL SERVER ERROR [('Content-Type', 'text/html'), ('Content-Length', '291')]
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.</p>
+
+Trying concrete values: {'_t_xor_2': 1L, '_t_xor_3': 1L, '_t_xor_0': 2L, '_t_xor_1': 1L, '_t_xor_4': 2L, '_t_str4': 'ansfer', '_t_str5': 't', '_t_str6': 'ransfer', '_t_str0': '-', '_t_str1': '', '_t_str2': '', '_t_str3': 'tr', 'cookie_val': 'alice#atok', 'rsplit_cookie_val_#_r': 'atok', '_t_str14': '', '_t_str13': '-', 'form_recipient_present': 31L, 'cookie_name': 'PyZoobarLogin', 'cookie': 'PyZoobarLogin=alice#atok', 'form_zoobars_present': 32L, 'path': 'fer', 'form_zoobars_val': '-', 'rsplit_cookie_val_#_l': 'alice'}
+/home/httpd/lab3/zoobar/debug.py:23 :: __try : caught exception in function transfer:
+ Traceback (most recent call last):
+  File "/home/httpd/lab3/zoobar/debug.py", line 20, in __try
+    return f(*args, **kwargs)
+  File "/home/httpd/lab3/zoobar/login.py", line 62, in loginhelper
+    return page(*args, **kwargs)
+  File "/home/httpd/lab3/zoobar/transfer.py", line 15, in transfer
+    zoobars = eval(request.form['zoobars'])
+  File "/home/httpd/lab3/symex/symeval.py", line 42, in myeval
+    return real_eval(expr, globals, locals)
+  File "<string>", line 1
+    -
+    ^
+SyntaxError: unexpected EOF while parsing
+
+startresp 500 INTERNAL SERVER ERROR [('Content-Type', 'text/html'), ('Content-Length', '291')]
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.</p>
+
+Trying concrete values: {'_t_xor_2': 1L, '_t_xor_3': 1L, '_t_xor_0': 2L, '_t_xor_1': 1L, '_t_xor_4': 2L, '_t_str4': 'ansfer', 'rsplit_cookie_val_#_l': 'alice', '_t_str6': 'ransfer', '_t_str0': '-', '_t_str1': 'aaaaaaaaaaa\x01', '_t_str2': '', '_t_str3': 'tr', 'cookie_val': 'alice#atok', 'rsplit_cookie_val_#_r': 'atok', '_t_len__t_str1_5': '12', '_t_len__t_str1_4': 'more', '_t_len__t_str1_3': 'more', '_t_len__t_str1_2': 'more', '_t_len__t_str1_1': 'more', '_t_str14': 'aaaaaaaaaaa\x01', '_t_str13': '-', 'form_recipient_present': 35L, 'cookie_name': 'PyZoobarLogin', 'cookie': 'PyZoobarLogin=alice#atok', 'form_zoobars_present': 36L, 'path': 'fer', 'form_zoobars_val': '-aaaaaaaaaaa\x01', '_t_val__t_str1_12_0': '97', '_t_str5': 't'}
+/home/httpd/lab3/zoobar/debug.py:23 :: __try : caught exception in function transfer:
+ Traceback (most recent call last):
+  File "/home/httpd/lab3/zoobar/debug.py", line 20, in __try
+    return f(*args, **kwargs)
+  File "/home/httpd/lab3/zoobar/login.py", line 62, in loginhelper
+    return page(*args, **kwargs)
+  File "/home/httpd/lab3/zoobar/transfer.py", line 15, in transfer
+    zoobars = eval(request.form['zoobars'])
+  File "/home/httpd/lab3/symex/symeval.py", line 42, in myeval
+    return real_eval(expr, globals, locals)
+  File "<string>", line 1
+    -aaaaaaaaaaa
+                ^
+SyntaxError: unexpected EOF while parsing
+
+startresp 500 INTERNAL SERVER ERROR [('Content-Type', 'text/html'), ('Content-Length', '291')]
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.</p>
+
+Trying concrete values: {'_t_xor_2': 1L, '_t_xor_3': 1L, '_t_xor_0': 2L, '_t_xor_1': 1L, '_t_xor_4': 2L, '_t_str4': 'ansfer', 'rsplit_cookie_val_#_l': 'alice', '_t_str6': 'ransfer', '_t_str0': '-', '_t_str1': 'aaaaaaaaaaa\x01', '_t_str2': '', '_t_str3': 'tr', 'cookie_val': 'alice#atok', 'rsplit_cookie_val_#_r': 'atok', '_t_len__t_str1_5': '12', '_t_len__t_str1_4': 'more', '_t_len__t_str1_3': 'more', '_t_len__t_str1_2': 'more', '_t_len__t_str1_1': 'more', '_t_str14': 'aaaaaaaaaaa\x01', '_t_str13': '-', 'form_recipient_present': 35L, 'cookie_name': 'PyZoobarLogin', 'cookie': 'PyZoobarLogin=alice#atok', 'form_zoobars_present': 36L, 'path': 'fer', 'form_zoobars_val': '-aaaaaaaaaaa\x01', '_t_val__t_str1_12_0': '97', '_t_str5': 't'}
+/home/httpd/lab3/zoobar/debug.py:23 :: __try : caught exception in function transfer:
+ Traceback (most recent call last):
+  File "/home/httpd/lab3/zoobar/debug.py", line 20, in __try
+    return f(*args, **kwargs)
+  File "/home/httpd/lab3/zoobar/login.py", line 62, in loginhelper
+    return page(*args, **kwargs)
+  File "/home/httpd/lab3/zoobar/transfer.py", line 15, in transfer
+    zoobars = eval(request.form['zoobars'])
+  File "/home/httpd/lab3/symex/symeval.py", line 42, in myeval
+    return real_eval(expr, globals, locals)
+  File "<string>", line 1
+    -aaaaaaaaaaa
+                ^
+SyntaxError: unexpected EOF while parsing
+
+startresp 500 INTERNAL SERVER ERROR [('Content-Type', 'text/html'), ('Content-Length', '291')]
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.</p>
+
+Trying concrete values: {'_t_xor_2': 1L, '_t_xor_3': 2L, '_t_xor_0': 2L, '_t_xor_1': 1L, 'form_recipient_present': 0L, 'rsplit_cookie_val_#_l': 'alice', 'cookie_name': 'PyZoobarLogin', '_t_str0': 'tr', '_t_str1': 'ansfer', '_t_str2': 't', '_t_str3': 'ransfer', 'cookie_val': 'alice#atok', 'form_zoobars_present': 0L, 'rsplit_cookie_val_#_r': 'atok', 'cookie': 'PyZoobarLogin=alice#atok', 'path': 'fer'}
+startresp 200 OK [('Content-Type', 'text/html; charset=utf-8'), ('Content-Length', '1628'), ('X-XSS-Protection', '0')]
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="/zoobar/media/zoobar.css">
+        <title>
+          Transfer - Zoobar Foundation
+        </title>
+    </head>
+    <body>
+        
+        
+        
+        <div id="header">
+          <div><a href="script/logout">Log out alice</a></div>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+      <h1><a href="script/">Zoobar Foundation for Sustainable
+                      Policy</a></h1>
+      <h2>Supporting the loyal
+          students of the next generation</h2>
+      
+      <div id="main" class="centerpiece">
+        <table>
+          <tr><td>
+             <p>
+               
+                 
+                   <a href="script/">Home</a>
+                 
+                  | 
+               
+                 
+                   <a href="script/users">Users</a>
+                 
+                  | 
+               
+                 
+                   <b>Transfer</b>
+                 
+                 
+               
+             </p>
+          </td></tr>
+          <tr><td class="main">
+            
+<b>Balance: </b><span id="myZoobars"></span> zoobars<br />
+<form method="POST" name="transferform" action="script/transfer">
+<p>Send <input name="zoobars" type="text" value="" size=5> zoobars</p>
+<p>to <input name=recipient type=text value="" size=10></p>
+<input type="submit" name="submission" value="Send">
+</form>
+
+<script type="text/javascript" src="script/zoobarjs"></script>
+
+          </td></tr>
+        </table>
+      </div>
+      
+      
+    </body>
+</html>
+Trying concrete values: {'_t_xor_2': 1L, '_t_xor_3': 2L, '_t_xor_0': 2L, '_t_xor_1': 1L, '_t_str4': 't', '_t_str5': 'ransfer', '_t_str0': 'M', '_t_str1': 'a0', '_t_str2': 'tr', '_t_str3': 'ansfer', 'cookie_val': 'a\x1d#M#a0', 'rsplit_cookie_val_#_r': 'M#a0', '_t_len__t_str1_1': '2', '_t_val__t_str1_2_0': '52', 'cookie_name': 'PyZoobarLogin', 'cookie': 'PyZoobarLogin=a\x1d#M#a0', '_t_val_rsplit_cookie_val_#_l_2_0': '125', 'path': 'fer', '_t_len_rsplit_cookie_val_#_l_1': '2', '_t_len__t_str0_1': '1', 'rsplit_cookie_val_#_l': 'a\x1d', '_t_val__t_str0_1_0': '38'}
+/home/httpd/lab3/zoobar/debug.py:23 :: __try : caught exception in function transfer:
+ Traceback (most recent call last):
+  File "/home/httpd/lab3/zoobar/debug.py", line 20, in __try
+    return f(*args, **kwargs)
+  File "/home/httpd/lab3/zoobar/login.py", line 59, in loginhelper
+    if not logged_in():
+  File "/home/httpd/lab3/zoobar/login.py", line 50, in logged_in
+    g.user.checkCookie(request.cookies.get("PyZoobarLogin"))
+  File "/home/httpd/lab3/zoobar/login.py", line 38, in checkCookie
+    (username, token) = cookie.rsplit("#", 1)
+  File "/home/httpd/lab3/symex/fuzzy.py", line 652, in rsplit
+    require(sep not in r)
+  File "/home/httpd/lab3/symex/fuzzy.py", line 365, in require
+    raise RequireMismatch()
+RequireMismatch
+
+startresp 500 INTERNAL SERVER ERROR [('Content-Type', 'text/html'), ('Content-Length', '291')]
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.</p>
+
+Trying concrete values: {'_t_xor_2': 1L, '_t_xor_3': 1L, '_t_xor_0': 2L, '_t_xor_1': 1L, '_t_xor_4': 1L, '_t_xor_5': 2L, 'form_recipient_val': 'alice', 'rsplit_cookie_val_#_l': 'alice', '_t_str0': 'tr', '_t_str1': 'ansfer', '_t_str2': 't', '_t_str3': 'ransfer', 'cookie_val': 'alice#atok', 'rsplit_cookie_val_#_r': 'atok', '_t_str14': '', '_t_str12': '', '_t_str13': '0', '_t_str10': '0', '_t_str11': '', 'form_recipient_present': 30L, 'cookie_name': 'PyZoobarLogin', 'cookie': 'PyZoobarLogin=alice#atok', 'form_zoobars_present': 31L, 'path': 'fer', 'form_zoobars_val': '0'}
+startresp 200 OK [('Content-Type', 'text/html; charset=utf-8'), ('Content-Length', '1683'), ('X-XSS-Protection', '0')]
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="/zoobar/media/zoobar.css">
+        <title>
+          Transfer - Zoobar Foundation
+        </title>
+    </head>
+    <body>
+        
+        
+        
+        <div id="header">
+          <div><a href="script/logout">Log out alice</a></div>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+      <h1><a href="script/">Zoobar Foundation for Sensible
+                      Discourse</a></h1>
+      <h2>Supporting the brightest
+          soldiers of the new world order</h2>
+      
+      <div id="main" class="centerpiece">
+        <table>
+          <tr><td>
+             <p>
+               
+                 
+                   <a href="script/">Home</a>
+                 
+                  | 
+               
+                 
+                   <a href="script/users">Users</a>
+                 
+                  | 
+               
+                 
+                   <b>Transfer</b>
+                 
+                 
+               
+             </p>
+          </td></tr>
+          <tr><td class="main">
+            
+<b>Balance: </b><span id="myZoobars"></span> zoobars<br />
+<form method="POST" name="transferform" action="script/transfer">
+<p>Send <input name="zoobars" type="text" value="0" size=5> zoobars</p>
+<p>to <input name=recipient type=text value="alice" size=10></p>
+<input type="submit" name="submission" value="Send">
+</form>
+
+<span class="warning">Sent 0 zoobars</span>
+
+<script type="text/javascript" src="script/zoobarjs"></script>
+
+          </td></tr>
+        </table>
+      </div>
+      
+      
+    </body>
+</html>
+Trying concrete values: {'_t_xor_2': 1L, '_t_xor_3': 2L, '_t_xor_0': 2L, '_t_xor_1': 1L, 'cookie': 'PyZoobarLogin=bob#btok', 'form_recipient_present': 25L, 'rsplit_cookie_val_#_l': 'bob', 'cookie_name': 'PyZoobarLogin', '_t_str0': 'tr', '_t_str1': 'ansfer', '_t_str2': 't', '_t_str3': 'ransfer', 'cookie_val': 'bob#btok', 'rsplit_cookie_val_#_r': 'btok', 'path': 'fer'}
+Traceback (most recent call last):
+  File "/home/httpd/lab3/zoobar/transfer.py", line 15, in transfer
+    zoobars = eval(request.form['zoobars'])
+KeyError: 'zoobars'
+startresp 200 OK [('Content-Type', 'text/html; charset=utf-8'), ('Content-Length', '1687'), ('X-XSS-Protection', '0')]
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="/zoobar/media/zoobar.css">
+        <title>
+          Transfer - Zoobar Foundation
+        </title>
+    </head>
+    <body>
+        
+        
+        
+        <div id="header">
+          <div><a href="script/logout">Log out bob</a></div>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+      <h1><a href="script/">Zoobar Foundation for Responsible
+                      Thinking</a></h1>
+      <h2>Supporting the leading
+          representatives of the new world order</h2>
+      
+      <div id="main" class="centerpiece">
+        <table>
+          <tr><td>
+             <p>
+               
+                 
+                   <a href="script/">Home</a>
+                 
+                  | 
+               
+                 
+                   <a href="script/users">Users</a>
+                 
+                  | 
+               
+                 
+                   <b>Transfer</b>
+                 
+                 
+               
+             </p>
+          </td></tr>
+          <tr><td class="main">
+            
+<b>Balance: </b><span id="myZoobars"></span> zoobars<br />
+<form method="POST" name="transferform" action="script/transfer">
+<p>Send <input name="zoobars" type="text" value="" size=5> zoobars</p>
+<p>to <input name=recipient type=text value="" size=10></p>
+<input type="submit" name="submission" value="Send">
+</form>
+
+<span class="warning">Transfer to  failed</span>
+
+<script type="text/javascript" src="script/zoobarjs"></script>
+
+          </td></tr>
+        </table>
+      </div>
+      
+      
+    </body>
+</html>
+Trying concrete values: {'_t_xor_2': 1L, '_t_xor_3': 2L, '_t_len_rsplit_cookie_val_#_l_1': '2', '_t_xor_1': 1L, '_t_str4': 't', '_t_str5': 'ransfer', 'cookie_name': 'PyZoobarLogin', '_t_xor_0': 2L, '_t_str2': 'tr', '_t_str3': 'ansfer', '_t_len_rsplit_cookie_val_#_r_1': '2', 'cookie': 'PyZoobarLogin=a=#a`', 'rsplit_cookie_val_#_r': 'a`', '_t_val_rsplit_cookie_val_#_l_2_0': '81', 'rsplit_cookie_val_#_l': 'a=', '_t_val_rsplit_cookie_val_#_r_2_0': '90', 'cookie_val': 'a=#a`', 'path': 'fer'}
+startresp 302 FOUND [('Content-Type', 'text/html; charset=utf-8'), ('Content-Length', '317'), ('Location', 'http://zoobarscript/script/login?nexturl=http://zoobarscript/transfer?query'), ('X-XSS-Protection', '0')]
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>Redirecting...</title>
+<h1>Redirecting...</h1>
+<p>You should be redirected automatically to target URL: <a href="script/login?nexturl=http://zoobarscript/transfer?query">script/login?nexturl=http://zoobarscript/transfer?query</a>.  If not click the link.
+Trying concrete values: {'_t_xor_2': 1L, '_t_xor_3': 1L, '_t_xor_0': 2L, '_t_xor_1': 1L, '_t_xor_4': 1L, '_t_xor_5': 2L, 'form_recipient_val': 'bob', 'rsplit_cookie_val_#_l': 'alice', '_t_str0': 'tr', '_t_str1': 'ansfer', '_t_str2': 't', '_t_str3': 'ransfer', 'cookie_val': 'alice#atok', 'rsplit_cookie_val_#_r': 'atok', '_t_str14': '', '_t_str12': '', '_t_str13': '0', '_t_str10': '0', '_t_str11': '', 'form_recipient_present': 30L, 'cookie_name': 'PyZoobarLogin', 'cookie': 'PyZoobarLogin=alice#atok', 'form_zoobars_present': 31L, 'path': 'fer', 'form_zoobars_val': '0'}
+startresp 200 OK [('Content-Type', 'text/html; charset=utf-8'), ('Content-Length', '1687'), ('X-XSS-Protection', '0')]
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="/zoobar/media/zoobar.css">
+        <title>
+          Transfer - Zoobar Foundation
+        </title>
+    </head>
+    <body>
+        
+        
+        
+        <div id="header">
+          <div><a href="script/logout">Log out alice</a></div>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+      <h1><a href="script/">Zoobar Foundation for Inquisitive
+                      Policy</a></h1>
+      <h2>Supporting the foremost
+          representatives of the next generation</h2>
+      
+      <div id="main" class="centerpiece">
+        <table>
+          <tr><td>
+             <p>
+               
+                 
+                   <a href="script/">Home</a>
+                 
+                  | 
+               
+                 
+                   <a href="script/users">Users</a>
+                 
+                  | 
+               
+                 
+                   <b>Transfer</b>
+                 
+                 
+               
+             </p>
+          </td></tr>
+          <tr><td class="main">
+            
+<b>Balance: </b><span id="myZoobars"></span> zoobars<br />
+<form method="POST" name="transferform" action="script/transfer">
+<p>Send <input name="zoobars" type="text" value="0" size=5> zoobars</p>
+<p>to <input name=recipient type=text value="bob" size=10></p>
+<input type="submit" name="submission" value="Send">
+</form>
+
+<span class="warning">Sent 0 zoobars</span>
+
+<script type="text/javascript" src="script/zoobarjs"></script>
+
+          </td></tr>
+        </table>
+      </div>
+      
+      
+    </body>
+</html>
+Trying concrete values: {'_t_xor_2': 1L, '_t_xor_3': 2L, '_t_xor_0': 2L, '_t_xor_1': 1L, 'form_recipient_present': 0L, 'rsplit_cookie_val_#_l': 'bob', 'cookie_name': 'PyZoobarLogin', '_t_str0': 'tr', '_t_str1': 'ansfer', '_t_str2': 't', '_t_str3': 'ransfer', 'cookie_val': 'bob#btok', 'form_zoobars_present': 25L, 'rsplit_cookie_val_#_r': 'btok', 'cookie': 'PyZoobarLogin=bob#btok', 'path': 'fer'}
+startresp 200 OK [('Content-Type', 'text/html; charset=utf-8'), ('Content-Length', '1632'), ('X-XSS-Protection', '0')]
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="/zoobar/media/zoobar.css">
+        <title>
+          Transfer - Zoobar Foundation
+        </title>
+    </head>
+    <body>
+        
+        
+        
+        <div id="header">
+          <div><a href="script/logout">Log out bob</a></div>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+      <h1><a href="script/">Zoobar Foundation for Objective
+                      Dialogue</a></h1>
+      <h2>Supporting the important
+          soldiers of the counterinsurgency</h2>
+      
+      <div id="main" class="centerpiece">
+        <table>
+          <tr><td>
+             <p>
+               
+                 
+                   <a href="script/">Home</a>
+                 
+                  | 
+               
+                 
+                   <a href="script/users">Users</a>
+                 
+                  | 
+               
+                 
+                   <b>Transfer</b>
+                 
+                 
+               
+             </p>
+          </td></tr>
+          <tr><td class="main">
+            
+<b>Balance: </b><span id="myZoobars"></span> zoobars<br />
+<form method="POST" name="transferform" action="script/transfer">
+<p>Send <input name="zoobars" type="text" value="" size=5> zoobars</p>
+<p>to <input name=recipient type=text value="" size=10></p>
+<input type="submit" name="submission" value="Send">
+</form>
+
+<script type="text/javascript" src="script/zoobarjs"></script>
+
+          </td></tr>
+        </table>
+      </div>
+      
+      
+    </body>
+</html>
+Trying concrete values: {'_t_xor_2': 1L, '_t_xor_3': 1L, '_t_xor_0': 2L, '_t_xor_1': 1L, '_t_xor_4': 1L, '_t_xor_5': 2L, 'form_recipient_val': 'alice', 'rsplit_cookie_val_#_l': 'alice', '_t_str0': 'tr', '_t_str1': 'ansfer', '_t_str2': 't', '_t_str3': 'ransfer', 'cookie_val': 'alice#atok', 'rsplit_cookie_val_#_r': 'atok', '_t_str14': '', '_t_str12': '', '_t_str13': '1', '_t_str10': '1', '_t_str11': '', 'form_recipient_present': 30L, 'cookie_name': 'PyZoobarLogin', 'cookie': 'PyZoobarLogin=alice#atok', 'form_zoobars_present': 31L, 'path': 'fer', 'form_zoobars_val': '1'}
+startresp 200 OK [('Content-Type', 'text/html; charset=utf-8'), ('Content-Length', '1676'), ('X-XSS-Protection', '0')]
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="/zoobar/media/zoobar.css">
+        <title>
+          Transfer - Zoobar Foundation
+        </title>
+    </head>
+    <body>
+        
+        
+        
+        <div id="header">
+          <div><a href="script/logout">Log out alice</a></div>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+      <h1><a href="script/">Zoobar Foundation for Sensible
+                      Policy</a></h1>
+      <h2>Supporting the loyal
+          soldiers of the next generation</h2>
+      
+      <div id="main" class="centerpiece">
+        <table>
+          <tr><td>
+             <p>
+               
+                 
+                   <a href="script/">Home</a>
+                 
+                  | 
+               
+                 
+                   <a href="script/users">Users</a>
+                 
+                  | 
+               
+                 
+                   <b>Transfer</b>
+                 
+                 
+               
+             </p>
+          </td></tr>
+          <tr><td class="main">
+            
+<b>Balance: </b><span id="myZoobars"></span> zoobars<br />
+<form method="POST" name="transferform" action="script/transfer">
+<p>Send <input name="zoobars" type="text" value="1" size=5> zoobars</p>
+<p>to <input name=recipient type=text value="alice" size=10></p>
+<input type="submit" name="submission" value="Send">
+</form>
+
+<span class="warning">Sent 1 zoobars</span>
+
+<script type="text/javascript" src="script/zoobarjs"></script>
+
+          </td></tr>
+        </table>
+      </div>
+      
+      
+    </body>
+</html>
+WARNING: Balance mismatch detected
+
+
+
+
+WARNING: Zoobar theft detected
+Traceback (most recent call last):
+  File "./check-symex-zoobar.py", line 121, in <module>
+    fuzzy.concolic_test(test_stuff, maxiter=2000, verbose=1)
+  File "/home/httpd/lab3/symex/fuzzy.py", line 799, in concolic_test
+    testfunc()
+  File "./check-symex-zoobar.py", line 113, in test_stuff
+    report_zoobar_theft()
+  File "./check-symex-zoobar.py", line 27, in report_zoobar_theft
+    raise ValueError("Throwing Exception")
+ValueError: Throwing Exception
+
+Script done on Fri 04 Mar 2016 02:23:32 PM UTC
