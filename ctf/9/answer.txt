@@ -1,0 +1,1 @@
+In this sql injection exercise, after understanding page source we came to know that for every correct user, site will alert "This user exists" so we write a script which bruteforce all possibilites of pass keys with username "admin" and check the output matches with "This user exists" or not, based on that we found out password which was flag string.

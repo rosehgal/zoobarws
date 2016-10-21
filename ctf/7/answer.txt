@@ -1,0 +1,1 @@
+After getting .pcap file, we found out on the internet that .pcap file can be viewed in wireshark. So we opened it in wireshark and tried to find string 'flag'. We got one packet that sends the flag.zip. Using 'export object' option and retrive flag.zip. After that we implement dictionary attack using fcrackzip and found out flag.

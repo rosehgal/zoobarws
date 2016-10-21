@@ -1,0 +1,4 @@
+strtoul,conver the input in to usigned long.So if we pass negetive value to it follwed by a binary that gives a shell prompt, so with count <0 then the check is bypased -- if(count<maxpint),MAXPOINT being 777 identfied by reading make file.
+We followed the same shell code injection into executable stack as we did in ex1 of project 1.
+Also memcpy wroks fine as memcpy takes third argument as unsigned int,so negetive value becomes +ve.There were some hit and trails of identifying the correct value of count.
+python file shellcode22.py contains input string. And shellcode.bin is taken from lab1 that prompts shell with user rights.

@@ -1,0 +1,2 @@
+We explored the cookies in this page.So even after logging the logged_in cookie was set to 0.
+We made to change it 1,then loading the same page , we got "run the page from example.com". So we opened example.com,wrote "javascript:document.location='https://172.27.20.32:8443/chal8.php'". Simply then it asked us to spoof browser as cs628 browser. We did it via user agent changer plugin in firefox.  

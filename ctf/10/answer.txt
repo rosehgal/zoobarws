@@ -1,0 +1,2 @@
+The attack is similar to that of 9th.The only differenc is that, there is no any script alert.So we explotied timing based side channal attack.By injecting sleep(1) in sqlinjection attack if password matches a particular patter of flag{*}.So if time exceeds 1 sec. The passstr is apended.
+This brute force attack is done via temp.py python script.

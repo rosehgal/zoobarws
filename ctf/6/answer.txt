@@ -1,0 +1,5 @@
+$.ajax('.git/refs/heads/master').done(function(version){$('#version').html(version.substring (0,6))});
+seemed somewhat distinguishing. So we googled it. Reading a lot we got,that wesite was buit using git repository.We appended /.git to the end of the link.Retrived chal6.php.
+The making input to inject out own command.exec() php function returns the exit value of last command(if multiple shell cmd are passed) as alert.
+so we used input generated from by appending different chars to ^flag{ using python file
+172.24.136.233";/bin/cat "/flags/rsehgal.flag" | grep ^flag{ ; echo "$?
