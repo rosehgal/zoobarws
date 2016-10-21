@@ -1,0 +1,111 @@
+[zookd.c:65]
+Overflow in 'reqpath' buffer.This buffer stores the path that has been requested by the client(Request_URI).But the value of 'reqpath' is obtained from the 'env' buffer which is of size 8192,on contrary 'reqpath' is of 1024 bytes.This buffer overflow writes the value of the 'fd' (file/socket descriptor that is used for returning response back to client).So the connection is broken between the client and server.And if it is overflow little bit more than it may override return address of process_client's callee function,which may crash server.
+
+    	char reqpath[2048];-\;
+    	int i;
+
+    	/* get the request line */
+    	if ((errmsg = http_request_line(fd, reqpath, env, &env_len)))
+        	return http_err(fd, 500, "http_request_line: %s", errmsg);
+`1
+
+
+[http.c:120]
+local buffer 'value' is used to store the value of the header variables that have been sent(as request headers) by the client(s).E.g Header={keep_alive='true',user_agent='rohit'} in this header variables are keep_alive and user_agent,with rhs of assignment as their values. The server accepts the value to be of size at max 512 bytes,But this header value tuple is fetched using 'buf' variable that is of size 8192.This may overwrite the value of fd is passed larger that 512 bytes,Which is again sufficient to break the connection between client and server.
+
+	char value[512];
+    	char envvar[512];
+	:
+	:
+line 136:char *sp = strchr(buf, ' ');
+        if (!sp)
+            return "Header parse error (1)";
+        *sp = '\0';
+        sp++;
+	:
+	:
+line 159:url_decode(value, sp);
+        /* Store header in env. variable for application code */
+        /* Some special headers don't use the HTTP_ prefix. */
+        if (strcmp(buf, "CONTENT_TYPE") != 0 &&
+            strcmp(buf, "CONTENT_LENGTH") != 0) {
+            sprintf(envvar, "HTTP_%s", buf);
+            setenv(envvar, value, 1);
+        } else {
+            setenv(buf, value, 1);
+        }
+
+[http.c:121]
+local buffer 'envvar' may again be overflown by the buffer variable.If the request header field is not of type 'Content_Header' || 'Content_Length' then it creates a new header variable named 'HTTP_' and append the 'buf' to it. I.e copying atmost 8192 size buffer to buffer of size atmost 512.Over flow is possible.
+
+	url_decode(value, sp);
+
+        /* Store header in env. variable for application code */
+        /* Some special headers don't use the HTTP_ prefix. */
+        if (strcmp(buf, "CONTENT_TYPE") != 0 &&
+            strcmp(buf, "CONTENT_LENGTH") != 0) {
+            sprintf(envvar, "HTTP_%s", buf);
+            setenv(envvar, value, 1);
+        } else {
+            setenv(buf, value, 1);
+        }
+
+[http.c:276]
+buffer 'pn' can be flow by the 'name' buffer(char ptr).The size of name is atmost 1024.But 'pn' is first changed to store current working directory and then appended with name buffer's value. Which may cause an overflow and overwrite fd and handler.
+
+line 276:char pn[1024];
+	 struct stat st;
+
+    	 getcwd(pn, sizeof(pn));
+    	 setenv("DOCUMENT_ROOT", pn, 1);
+
+    	 strcat(pn, name);
+    	 split_path(pn);
+
+
+line353:char name[1024];
+    	struct stat st;
+   	int i;
+
+    	for (i = 0; indices[i]; i++) {
+        	dir_join(name, pn, indices[i]);
+        	if (stat(name, &st) == 0 && S_ISREG(st.st_mode)) {
+            		dir_join(name, getenv("SCRIPT_NAME"), indices[i]);
+            		break;
+        	}
+    	}
+
+    	if (indices[i] == NULL) {
+        	http_err(fd, 403, "No index file in %s", pn);
+       		return;
+    	}
+
+    	http_serve(fd, name);
+
+[http.c:353]
+for every element of indices array the 'name' is storing the value correposnding to the env_variable("Script_name") added with filename.It may be possible that value of env varibale is made to exceed by the 1024.So is with name.So in the dir_join function the target of dst pointer that is ,name is overflown that may change the value of fd variable.
+
+	void dir_join(char *dst, const char *dirname, const char *filename) {
+    		strcpy(dst, dirname);
+    		if (dst[strlen(dst) - 1] != '/')
+        		strcat(dst, "/");
+    		strcat(dst, filename);
+	}
+
+	void http_serve_directory(int fd, const char *pn) {
+    		/* for directories, use index.html or similar in that directory */
+    		static const char * const indices[] = {"index.html", "index.php", "index.cgi", NULL};
+   		char name[1024];
+    		struct stat st;
+    		int	 i;
+
+    		for (i = 0; indices[i]; i++) {
+        		dir_join(name, pn, indices[i]);
+        		if (stat(name, &st) == 0 && S_ISREG(st.st_mode)) {
+        	    		dir_join(name, getenv("SCRIPT_NAME"), indices[i]);
+        	    		break;
+        		}
+    		}
+		:
+		:
+	}

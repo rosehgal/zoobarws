@@ -1,0 +1,25 @@
+## Place your answers here.
+exploit-2a:I have tried to over flow the reqpath buffer.But passing very along uri.Which is the exploitation of the first bug that i have mentioned in my file.That does changes the control flow of the program.
+
+exploit-2b:In this i have tried overflowing the 'value' buffer by passing the value of user_agent header to very large value of about 1024 bytes.And thereby changing the value of fd,that gives the segmenatation fault.(This exploit changes the value of the data structure)
+
+
+exploit-3:We have used the exploit-2a to change the value of return address to the start of the buffer-'&reqpath[1]'.And the shellcode that is made to unlink the file is passed as the value to reqpath using http://localhost:8080/<the req shellcode.bin in hex> with some no ops and finally with the changed value of return address i.e &reqpath[1].
+The other overflows can also be exploited in the same fashion. 
+
+
+Exercise-4:Return to lib-c have been exploited for the buffers reqpath,value.And in the similar manner these can be exploited for the rest of the buffers.
+
+Exercise-5:
+Part 1: The no of services concurrently that can be accessed by the are 256.What I have done is I have used a python Script HULK.py in this folder to Create dummy denial of service effect.
+This Script is open source and is avialable over the internet :).
+So this denial of service attack may impose security threat over the web server as some of DOS may lead to access to private files of the server.
+usage : python hulk.py  http://cs628:8080/zoobar/index.cgi/login?nexturl=http://cs628:8080/zoobar/index.cgi/    ----- DOS
+The Standard DOS handling methods can be used to overcome this effect.
+
+Part 2:When a http://localhost:8080/<file path> request is received by the web server it then invokes zookfs which looks for the <filepath> named file in current directory and returns the file to the client.So suppose i passes "curl http://localhost:8080/http.c" the client will be able to get the http.c file. Using this process times a lot he may be able to get the entire code of the web server and delve into it for security threats.And using the linux directory structure notation he can even acccess to confidential files in root folder as well.
+Limitations : you need to know the names of the file in server's dir.
+Handling : Since every file is given the rwx tripple,we can modify this to control read access.
+
+
+

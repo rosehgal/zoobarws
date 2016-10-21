@@ -1,0 +1,8 @@
+./check-bin.sh
+WARNING: bin.tar.gz might not have been built this year (2016);
+WARNING: if 2016 is correct, ask course staff to rebuild bin.tar.gz.
+tar xf bin.tar.gz
+./check-part2.sh zook-exstack.conf ./exploit-2a.py
+[1;31mFAIL[m ./exploit-2a.py
+./check-part2.sh zook-exstack.conf ./exploit-2b.py
+[1;31mFAIL[m ./exploit-2b.py
